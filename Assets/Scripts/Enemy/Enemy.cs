@@ -9,6 +9,17 @@ public class Enemy : MonoBehaviour
     public float ScoreAdded = 10; // The money value that should be added after enemy death.
     public Score scoreScript; // Get the Money information.
 
+
+    //Materials / Damage//
+    public Material MaterialEyesurfesDamaged;//material eye
+    public Material MaterialEyesurfesDamagedHARD; //material eye
+
+    public GameObject EyeSurfes; //object
+    public GameObject Body; //object
+
+    public float HealthToShowDamage = 30; //floats
+    public float HealthToShowHardDamage = 10; //floats
+
     //GORE//
     public Transform effecttransform; // The transform for the effect
     public AudioClip[] AudioImpact; //Impact audio
@@ -26,7 +37,6 @@ public class Enemy : MonoBehaviour
 
     // Audio //
     public AudioSource AudioS;
-
 
     // Getting components.
     void Start()
@@ -64,6 +74,13 @@ public class Enemy : MonoBehaviour
                 nextActionTime = Time.time + period;
                 healthPlayer.health -= Damage;
             }
+        }
+    }
+    void LateUpdate()
+    {
+        if (health <= HealthToShowDamage)
+        {
+            EyeSurfes.GetComponent<MeshRenderer>().material = MaterialEyesurfesDamaged;
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ShotGun : MonoBehaviour
 {
 
-    public float damage = 35;
+    public float damage = 40;
     public float range = 45;
     public float ammo = 12;
 
@@ -18,6 +18,7 @@ public class ShotGun : MonoBehaviour
     public AudioSource audioSource;
     public Animator animator;
     public Animator animator2;
+
     public AudioClip[] shootSounds;
 
     public Camera Cam;
@@ -26,15 +27,13 @@ public class ShotGun : MonoBehaviour
 
     private bool ReloadNOW = false;
 
-    public float fireRate = 1F;
-    private float nextFire = 0.0F;
 
     int amountOfProjectiles = 2;
+
     void Update()
     {
-        if (Time.time > nextFire && Input.GetButtonDown("Fire1") && shootpermission == true)
+        if (Input.GetButtonDown("Fire1") && shootpermission == true)
         {
-            nextFire = Time.time + fireRate;
             for (int i = 0; i < amountOfProjectiles; i++)
             {
                 Shoot();
@@ -51,6 +50,8 @@ public class ShotGun : MonoBehaviour
             ammoText.text = "0";
             ammoTextActive.SetActive(false);
             ReloadImage.SetActive(true);
+            audioSource.PlayOneShot(Reload);
+
         }
 
         if (Input.GetButtonDown("Reload") && ammo <= 12)
@@ -61,6 +62,7 @@ public class ShotGun : MonoBehaviour
             ammoText.text = "0";
             ammoTextActive.SetActive(false);
             ReloadImage.SetActive(true);
+            audioSource.PlayOneShot(Reload);
         }
         if (ammo > 0 && ReloadNOW == false)
         {
@@ -88,8 +90,9 @@ public class ShotGun : MonoBehaviour
                 Destroy(ImpactGO, 2);
             }
         }
-    }
+        animator2.SetTrigger("Reload");
 
+    }
 
     void ReloadAnimation()
     {
@@ -98,9 +101,5 @@ public class ShotGun : MonoBehaviour
         ReloadNOW = false;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
-    }
-    void ReloadSound()
-    {
-        audioSource.PlayOneShot(Reload);
     }
 }
