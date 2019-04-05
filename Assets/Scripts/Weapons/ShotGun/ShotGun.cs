@@ -19,6 +19,7 @@ public class ShotGun : MonoBehaviour
     public GameObject ammoTextActive;
     public GameObject ReloadImage;
     public AudioClip Reload;
+    public AudioClip MiniReload;
     public AudioSource audioSource;
     public Animator animator;
     public Animator animator2;
@@ -107,7 +108,7 @@ public class ShotGun : MonoBehaviour
             }
         }
         animator2.SetTrigger("Reload");
-
+        audioSource.PlayOneShot(MiniReload);
     }
 
     void ReloadAnimation()
