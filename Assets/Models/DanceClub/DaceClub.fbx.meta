@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 1a731ff898f6cc548a0c0cdc572adf65
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Build
+    100002: CubeRoof
+    100004: //RootNode
+    100006: DiscoBall
+    100008: DiscoBallHolder
+    100010: group1
+    100012: group2
+    100014: Light
+    100016: Light1
+    100018: Light2
+    100020: Light3
+    100022: Light4
+    100024: Light5
+    100026: LightRoof
+    100028: LightRoof1
+    100030: LightRoofHolder
+    100032: LightRoofHolder1
+    100034: pCube6
+    100036: pCube6 1
+    100038: pCylinder1
+    100040: pCylinder1 1
+    100042: pCylinder15
+    100044: pCylinder15 1
+    100046: pCylinder16
+    100048: pCylinder16 1
+    100050: pCylinder2
+    100052: pCylinder2 1
+    100054: pCylinder3
+    100056: pCylinder3 1
+    100058: pCylinder4
+    100060: pCylinder4 1
+    100062: pCylinder5
+    100064: pCylinder5 1
+    100066: pCylinder6
+    100068: pCylinder7
+    100070: Ring
+    100072: Ring1
+    100074: Ring2
+    100076: Ring3
+    100078: rug
+    100080: socha
+    100082: sochaHolder
+    100084: sochaHolder1
+    100086: sochaHolder2
+    100088: sochaHolder3
+    100090: Speaker
+    100092: Speaker1
+    100094: SpeakerCable
+    100096: SpeakerCable1
+    100098: TEXT
+    100100: transform2
+    100102: transform3
+    100104: Wall
+    100106: Wall2
+    100108: WallRoof
+    400000: Build
+    400002: CubeRoof
+    400004: //RootNode
+    400006: DiscoBall
+    400008: DiscoBallHolder
+    400010: group1
+    400012: group2
+    400014: Light
+    400016: Light1
+    400018: Light2
+    400020: Light3
+    400022: Light4
+    400024: Light5
+    400026: LightRoof
+    400028: LightRoof1
+    400030: LightRoofHolder
+    400032: LightRoofHolder1
+    400034: pCube6
+    400036: pCube6 1
+    400038: pCylinder1
+    400040: pCylinder1 1
+    400042: pCylinder15
+    400044: pCylinder15 1
+    400046: pCylinder16
+    400048: pCylinder16 1
+    400050: pCylinder2
+    400052: pCylinder2 1
+    400054: pCylinder3
+    400056: pCylinder3 1
+    400058: pCylinder4
+    400060: pCylinder4 1
+    400062: pCylinder5
+    400064: pCylinder5 1
+    400066: pCylinder6
+    400068: pCylinder7
+    400070: Ring
+    400072: Ring1
+    400074: Ring2
+    400076: Ring3
+    400078: rug
+    400080: socha
+    400082: sochaHolder
+    400084: sochaHolder1
+    400086: sochaHolder2
+    400088: sochaHolder3
+    400090: Speaker
+    400092: Speaker1
+    400094: SpeakerCable
+    400096: SpeakerCable1
+    400098: TEXT
+    400100: transform2
+    400102: transform3
+    400104: Wall
+    400106: Wall2
+    400108: WallRoof
+    2100000: LightsRoof
+    2100002: MiniLights
+    2100004: Speakers
+    2100006: Rug
+    2100008: Building
+    2100010: SochaHolder
+    2100012: Socha
+    2100014: Rings
+    2100016: DiscoBall1
+    2100018: WallsRoof
+    2100020: Text
+    2100022: HolderHolders
+    2300000: Build
+    2300002: CubeRoof
+    2300004: DiscoBall
+    2300006: DiscoBallHolder
+    2300008: Light
+    2300010: Light1
+    2300012: Light2
+    2300014: Light3
+    2300016: Light4
+    2300018: Light5
+    2300020: LightRoof
+    2300022: LightRoof1
+    2300024: LightRoofHolder
+    2300026: LightRoofHolder1
+    2300028: pCube6
+    2300030: pCube6 1
+    2300032: pCylinder1
+    2300034: pCylinder1 1
+    2300036: pCylinder15
+    2300038: pCylinder15 1
+    2300040: pCylinder16
+    2300042: pCylinder16 1
+    2300044: pCylinder2
+    2300046: pCylinder2 1
+    2300048: pCylinder3
+    2300050: pCylinder3 1
+    2300052: pCylinder4
+    2300054: pCylinder4 1
+    2300056: pCylinder5
+    2300058: pCylinder5 1
+    2300060: Ring
+    2300062: Ring1
+    2300064: Ring2
+    2300066: Ring3
+    2300068: rug
+    2300070: socha
+    2300072: sochaHolder
+    2300074: sochaHolder1
+    2300076: sochaHolder2
+    2300078: sochaHolder3
+    2300080: SpeakerCable
+    2300082: SpeakerCable1
+    2300084: TEXT
+    2300086: Wall
+    2300088: Wall2
+    2300090: WallRoof
+    3300000: Build
+    3300002: CubeRoof
+    3300004: DiscoBall
+    3300006: DiscoBallHolder
+    3300008: Light
+    3300010: Light1
+    3300012: Light2
+    3300014: Light3
+    3300016: Light4
+    3300018: Light5
+    3300020: LightRoof
+    3300022: LightRoof1
+    3300024: LightRoofHolder
+    3300026: LightRoofHolder1
+    3300028: pCube6
+    3300030: pCube6 1
+    3300032: pCylinder1
+    3300034: pCylinder1 1
+    3300036: pCylinder15
+    3300038: pCylinder15 1
+    3300040: pCylinder16
+    3300042: pCylinder16 1
+    3300044: pCylinder2
+    3300046: pCylinder2 1
+    3300048: pCylinder3
+    3300050: pCylinder3 1
+    3300052: pCylinder4
+    3300054: pCylinder4 1
+    3300056: pCylinder5
+    3300058: pCylinder5 1
+    3300060: Ring
+    3300062: Ring1
+    3300064: Ring2
+    3300066: Ring3
+    3300068: rug
+    3300070: socha
+    3300072: sochaHolder
+    3300074: sochaHolder1
+    3300076: sochaHolder2
+    3300078: sochaHolder3
+    3300080: SpeakerCable
+    3300082: SpeakerCable1
+    3300084: TEXT
+    3300086: Wall
+    3300088: Wall2
+    3300090: WallRoof
+    4300000: LightRoof1
+    4300002: LightRoofHolder1
+    4300004: LightRoofHolder
+    4300006: LightRoof
+    4300008: Light5
+    4300010: Light4
+    4300012: Light3
+    4300014: Light2
+    4300016: Light1
+    4300018: Light
+    4300020: SpeakerCable1
+    4300022: SpeakerCable
+    4300024: pCylinder16
+    4300026: pCube6
+    4300028: pCylinder15
+    4300030: pCylinder16
+    4300032: pCube6
+    4300034: pCylinder15
+    4300036: rug
+    4300038: WallRoof
+    4300040: sochaHolder3
+    4300042: sochaHolder2
+    4300044: sochaHolder1
+    4300046: sochaHolder
+    4300048: socha
+    4300050: DiscoBallHolder
+    4300052: DiscoBall
+    4300054: CubeRoof
+    4300056: Ring3
+    4300058: Ring2
+    4300060: Ring1
+    4300062: Ring
+    4300064: Wall2
+    4300066: Wall
+    4300068: TEXT
+    4300070: pCylinder5
+    4300072: pCylinder4
+    4300074: pCylinder3
+    4300076: pCylinder2
+    4300078: pCylinder1
+    4300080: pCylinder5
+    4300082: pCylinder4
+    4300084: pCylinder3
+    4300086: pCylinder2
+    4300088: pCylinder1
+    4300090: Build
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

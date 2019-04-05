@@ -11,6 +11,7 @@ ExportedObj/
 obj/
 *.svd
 *.userprefs
+*.unitypack
 /*.csproj
 *.pidb
 *.suo
