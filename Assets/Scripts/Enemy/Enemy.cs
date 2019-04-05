@@ -11,14 +11,25 @@ public class Enemy : MonoBehaviour
 
 
     //Materials / Damage//
-    public Material MaterialEyesurfesDamaged;//material eye
-    public Material MaterialEyesurfesDamagedHARD; //material eye
+    //Damage
+    public Material EyeDamage; //Eye
+    public Material EyeBaseDamage; //Eyebase
+    public Material BodyDamage; //Body
 
-    public GameObject EyeSurfes; //object
+    //Hard Damage
+    public Material EyeHardDamage; //Eye
+    public Material EyeBaseHardDamage; //Eyebase
+    public Material BodyHardDamage; //Body
+
+    //Body parts
     public GameObject Body; //object
+    public GameObject EyeSurfes; //object
+    public GameObject Eye1;
+    public GameObject Eye2;
 
+    //Floats to change materials
     public float HealthToShowDamage = 30; //floats
-    public float HealthToShowHardDamage = 10; //floats
+    public float HealthToShowHardDamage = 15; //floats
 
     //GORE//
     public Transform effecttransform; // The transform for the effect
@@ -75,12 +86,19 @@ public class Enemy : MonoBehaviour
                 healthPlayer.health -= Damage;
             }
         }
-    }
-    void LateUpdate()
-    {
         if (health <= HealthToShowDamage)
         {
-            EyeSurfes.GetComponent<MeshRenderer>().material = MaterialEyesurfesDamaged;
+            Eye1.GetComponent<MeshRenderer>().material = EyeDamage;
+            Eye2.GetComponent<MeshRenderer>().material = EyeDamage;
+            Body.GetComponent<MeshRenderer>().material = BodyDamage;
+            EyeSurfes.GetComponent<MeshRenderer>().material = EyeBaseDamage;
+        }
+        if (health <= HealthToShowHardDamage)
+        {
+            Eye1.GetComponent<MeshRenderer>().material = EyeHardDamage;
+            Eye2.GetComponent<MeshRenderer>().material = EyeHardDamage;
+            Body.GetComponent<MeshRenderer>().material = BodyHardDamage;
+            EyeSurfes.GetComponent<MeshRenderer>().material = EyeBaseHardDamage;
         }
     }
 

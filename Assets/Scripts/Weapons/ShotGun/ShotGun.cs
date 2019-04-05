@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class ShotGun : MonoBehaviour
 {
 
-    public float damage = 40;
+    public float damageMin = 20;
+    public float damageMax = 40;
+
     public float range = 45;
     public float ammo = 14;
 
@@ -30,7 +32,10 @@ public class ShotGun : MonoBehaviour
     private bool ReloadNOW = false;
 
 
-    int amountOfProjectiles = 2;
+    int amountOfProjectiles = 1;
+
+    public float fireRate = 0.5F;
+    private float nextFire = 0.0F;
 
     void OnEnable()
     {
@@ -43,12 +48,13 @@ public class ShotGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && shootpermission == true && Time.timeScale >= 0.5)
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5)
         {
             for (int i = 0; i < amountOfProjectiles; i++)
             {
                 Shoot();
             }
+            nextFire = Time.time + fireRate;
         }
 
 
@@ -61,11 +67,10 @@ public class ShotGun : MonoBehaviour
             ammoText.text = "0";
             ammoTextActive.SetActive(false);
             ReloadImage.SetActive(true);
-            audioSource.PlayOneShot(Reload);
 
         }
 
-        if (Input.GetButtonDown("Reload") && ammo <= ammo)
+        if (Input.GetButtonDown("Reload") && ammo <= 10)
         {
             ReloadNOW = true;
             animator.SetTrigger("Reload");
@@ -73,7 +78,6 @@ public class ShotGun : MonoBehaviour
             ammoText.text = "0";
             ammoTextActive.SetActive(false);
             ReloadImage.SetActive(true);
-            audioSource.PlayOneShot(Reload);
         }
         if (ammo > 0 && ReloadNOW == false)
         {
@@ -85,11 +89,12 @@ public class ShotGun : MonoBehaviour
     {
         muzzleFlash.Play();
         audioSource.PlayOneShot(shootSounds[Random.Range(0, shootSounds.Length)]);
-        ammo -= 1;
+        ammo -= 2;
 
         RaycastHit hit;
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
         {
+            float damage = Random.Range(damageMin, damageMax);
             Enemy target = hit.transform.GetComponent<Enemy>();
             if (target != null)
             {
@@ -107,10 +112,14 @@ public class ShotGun : MonoBehaviour
 
     void ReloadAnimation()
     {
-        ammo = ammo;
+        ammo = 12;
         shootpermission = true;
         ReloadNOW = false;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
+    }
+    void ReloadSound()
+    {
+        audioSource.PlayOneShot(Reload);
     }
 }
