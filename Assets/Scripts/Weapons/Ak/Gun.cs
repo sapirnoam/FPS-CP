@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
 
-    public float damage = 10f;
+    public float damageMin = 5;
+    public float damageMax = 13;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 30f;
@@ -85,6 +86,7 @@ void Shoot()
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
         {
             Enemy target = hit.transform.GetComponent<Enemy>();
+            float damage = Random.Range(damageMin, damageMax);
             if (target != null)
             {
                 target.TakeDamage(damage);

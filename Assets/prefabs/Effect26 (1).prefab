@@ -4782,7 +4782,7 @@ ParticleSystem:
 --- !u!199 &2129798165315766413
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9581,7 +9581,7 @@ ParticleSystem:
 --- !u!199 &1537034344008217472
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9825,6 +9825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5540931428814014364}
   - component: {fileID: 1734901493624976893}
+  - component: {fileID: 3917046520881092856}
   m_Layer: 0
   m_Name: Effect26 (1)
   m_TagString: Untagged
@@ -9873,6 +9874,19 @@ MonoBehaviour:
   Speed: 10
   AirDrag: 0.1
   UseGravity: 1
+--- !u!114 &3917046520881092856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515020518904161886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c096658cd37f05e4eb5c95caf6c274b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToRemote: 15
 --- !u!1 &5764818495562637873
 GameObject:
   m_ObjectHideFlags: 0
@@ -14463,7 +14477,7 @@ ParticleSystem:
 --- !u!199 &8427558206928335283
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -19407,7 +19421,7 @@ ParticleSystem:
 --- !u!199 &3504744323482364859
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -23980,7 +23994,7 @@ ParticleSystem:
 --- !u!199 &2172111299062461700
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

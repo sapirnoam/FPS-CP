@@ -41,14 +41,7 @@ public class RFX4_ShaderFloatCurve : MonoBehaviour {
 
     private void Update()
     {
-        rend.GetPropertyBlock(props);
-
         var time = Time.time - startTime;
-        if (canUpdate)
-        {
-            var eval = FloatCurve.Evaluate(time / GraphTimeMultiplier) * GraphIntensityMultiplier;
-            props.SetFloat(propertyID, eval);
-        }
         if (time >= GraphTimeMultiplier)
         {
             if (IsLoop) startTime = Time.time;
