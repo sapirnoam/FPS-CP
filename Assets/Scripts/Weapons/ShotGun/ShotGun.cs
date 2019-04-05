@@ -7,7 +7,9 @@ public class ShotGun : MonoBehaviour
 
     public float damage = 40;
     public float range = 45;
-    public float ammo = 12;
+    public float ammo = 14;
+
+    public GameObject Shell;
 
 
     public bool shootpermission = true;
@@ -30,9 +32,18 @@ public class ShotGun : MonoBehaviour
 
     int amountOfProjectiles = 2;
 
+    void OnEnable()
+    {
+        Shell.SetActive(true);
+    }
+    void OnDisable()
+    {
+        Shell.SetActive(false);
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && shootpermission == true)
+        if (Input.GetButtonDown("Fire1") && shootpermission == true && Time.timeScale >= 0.5)
         {
             for (int i = 0; i < amountOfProjectiles; i++)
             {
@@ -54,7 +65,7 @@ public class ShotGun : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Reload") && ammo <= 12)
+        if (Input.GetButtonDown("Reload") && ammo <= ammo)
         {
             ReloadNOW = true;
             animator.SetTrigger("Reload");
@@ -74,7 +85,7 @@ public class ShotGun : MonoBehaviour
     {
         muzzleFlash.Play();
         audioSource.PlayOneShot(shootSounds[Random.Range(0, shootSounds.Length)]);
-        ammo -= 2;
+        ammo -= 1;
 
         RaycastHit hit;
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
@@ -96,7 +107,7 @@ public class ShotGun : MonoBehaviour
 
     void ReloadAnimation()
     {
-        ammo = 12;
+        ammo = ammo;
         shootpermission = true;
         ReloadNOW = false;
         ammoTextActive.SetActive(true);

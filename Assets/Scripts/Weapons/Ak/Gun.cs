@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     public float impactForce = 30f;
     public float ammo = 60;
 
+    public GameObject LightBullet;
 
     public bool shootpermission = true;
     public Text ammoText;
@@ -27,9 +28,18 @@ public class Gun : MonoBehaviour
 
     private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
+
+    void OnEnable()
+    {
+        LightBullet.SetActive(true);
+    }
+    void OnDisable()
+    {
+        LightBullet.SetActive(false);
+    }
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5)
         {
           nextTimeToFire = Time.time + 1f / fireRate;
           Shoot();
