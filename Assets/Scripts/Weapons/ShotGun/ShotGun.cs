@@ -91,6 +91,7 @@ public class ShotGun : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
+        animator.SetTrigger("Pump");
         audioSource.PlayOneShot(shootSounds[Random.Range(0, shootSounds.Length)]);
         ammo -= 2;
 

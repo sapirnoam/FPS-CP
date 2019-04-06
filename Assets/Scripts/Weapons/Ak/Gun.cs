@@ -31,8 +31,6 @@ public class Gun : MonoBehaviour
     private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
     public float AllowReload = 1.30f;
-
-
     void OnEnable()
     {
         LightBullet.SetActive(true);
@@ -48,7 +46,6 @@ public class Gun : MonoBehaviour
           nextTimeToFire = Time.time + 1f / fireRate;
           Shoot();
         }
-
         if (ammo <= 0 && shootpermission == true)
         {
             ReloadNOW = true;
@@ -78,12 +75,11 @@ void Shoot()
     {
         //Effect:
         muzzleFlash.Play();
-
         //Audio:
         audioSource.PlayOneShot(shootSounds[Random.Range(0, shootSounds.Length)]);
 
-
-        /* Ammo: */ ammo -= 1;
+        /* Ammo: */
+        ammo -= 1;
 
         RaycastHit hit;
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
