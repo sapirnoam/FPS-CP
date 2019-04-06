@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+
 public class ShotGun : MonoBehaviour
 {
 
@@ -31,12 +33,13 @@ public class ShotGun : MonoBehaviour
     public GameObject ImpactEffect;
 
     private bool ReloadNOW = false;
-
+    public WeaponsSwitcher ws;
 
     int amountOfProjectiles = 1;
 
     public float fireRate = 0.5F;
     private float nextFire = 0.0F;
+    public float AllowReload = 1.55f;
 
     void OnEnable()
     {
@@ -68,7 +71,6 @@ public class ShotGun : MonoBehaviour
             ammoText.text = "0";
             ammoTextActive.SetActive(false);
             ReloadImage.SetActive(true);
-
         }
 
         if (Input.GetButtonDown("Reload") && ammo <= 10)
@@ -121,6 +123,14 @@ public class ShotGun : MonoBehaviour
     }
     void ReloadSound()
     {
+        StartCoroutine(ReloadFalse());
+        ws.IsReloading = true;
         audioSource.PlayOneShot(Reload);
     }
+    IEnumerator ReloadFalse()
+    {
+        yield return new WaitForSeconds(AllowReload);
+        ws.IsReloading = false;
+    }
+
 }

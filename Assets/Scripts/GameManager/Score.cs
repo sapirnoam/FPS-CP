@@ -10,12 +10,12 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score:" + " " + score.ToString();
+        scoreText.text = "Money:" + " " + score.ToString() + "$";
     }
 
     // Update is called once per frame
     void Update()
     {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Money: " + score.ToString() + "$";
     }
 }

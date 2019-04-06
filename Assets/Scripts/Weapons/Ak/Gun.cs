@@ -26,9 +26,12 @@ public class Gun : MonoBehaviour
     public Camera Cam;
     public ParticleSystem muzzleFlash;
     public GameObject ImpactEffect;
+    public WeaponsSwitcher ws;
 
     private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
+    public float AllowReload = 1.30f;
+
 
     void OnEnable()
     {
@@ -113,6 +116,13 @@ void Shoot()
     }
     void ReloadSound()
     {
+        StartCoroutine(ReloadFalse());
+        ws.IsReloading = true;
         audioSource.PlayOneShot(Reload);
+    }
+    IEnumerator ReloadFalse()
+    {
+        yield return new WaitForSeconds(AllowReload);
+        ws.IsReloading = false;
     }
 }

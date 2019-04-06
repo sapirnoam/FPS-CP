@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     public AudioClip[] AudioImpact; //Impact audio
     public AudioClip deathAudio;
     public GameObject effect; // The death effect
-
+    private bool collided;
 
     // Attacking the player components ; Attacking while player tuches the enemy!, Not weapon attacking.//
 
@@ -73,16 +73,16 @@ public class Enemy : MonoBehaviour
 
     // Damage to player.
     private float nextActionTime = 0.0f;
-    public float period = 2f;
+    public float Attackperiod = 2f;
 
     void Update()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= AttackRadious)
         {
-            if (Time.time > nextActionTime)
+            if (Time.unscaledTime > nextActionTime)
             {
-                nextActionTime = Time.time + period;
+                nextActionTime = Time.unscaledTime + Attackperiod;
                 healthPlayer.health -= Damage;
             }
         }
