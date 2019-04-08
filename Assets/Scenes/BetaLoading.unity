@@ -448,7 +448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &187030468
 RectTransform:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Generating PofleKatom...
+  m_Text: Generating PofleKatom
 --- !u!222 &187030470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please report errors & bugs to @realnoamsapir
+  m_Text: Please report bugs & errors to @realnoamsapir
 --- !u!222 &412400447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -907,15 +907,15 @@ RectTransform:
   m_GameObject: {fileID: 824096799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27086505, y: 0.27086505, z: 0.27086505}
+  m_LocalScale: {x: 0.18753274, y: 0.18753274, z: 0.18753274}
   m_Children: []
   m_Father: {fileID: 82475740}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 498}
-  m_SizeDelta: {x: 6306.4, y: 734.8}
+  m_AnchoredPosition: {x: 1, y: 481}
+  m_SizeDelta: {x: 10123.1, y: 734.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824096801
 MonoBehaviour:
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.009897232, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.15351725, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3679b19680fb5fb46a2e7f3a9dc15616, type: 3}
     m_FontSize: 284
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 300
@@ -950,7 +950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Feel free to record and share.
+  m_Text: CLOSED BETA, YOU ARE NOT ALLOWED TO SHARE CONTENT FROM THIS BUILD.
 --- !u!222 &824096802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1192,7 +1192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851131191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -18.454166, z: 83.5}
+  m_LocalPosition: {x: 0, y: -21.8, z: 83.5}
   m_LocalScale: {x: 10.347536, y: 10.347536, z: 10.347536}
   m_Children: []
   m_Father: {fileID: 0}

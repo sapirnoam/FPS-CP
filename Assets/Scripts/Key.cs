@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    public KeysManager Km;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Km = FindObjectOfType<KeysManager>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision other)
     {
-        
+            Km.Keys += 1;
+            Destroy(gameObject);
+            Debug.Log("w");
     }
 }
+

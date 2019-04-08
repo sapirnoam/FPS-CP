@@ -18,7 +18,7 @@ public class LoadingGame : MonoBehaviour
 
         while (!operation.isDone)
         {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
+            float progress = Mathf.Clamp01(operation.progress / .2f);
             yield return null;
 
         }

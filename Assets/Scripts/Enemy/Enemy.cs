@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
     //GORE//
     public Transform effecttransform; // The transform for the effect
     public AudioClip[] AudioImpact; //Impact audio
-    public AudioClip deathAudio;
     public GameObject effect; // The death effect
 
 
@@ -48,13 +47,18 @@ public class Enemy : MonoBehaviour
 
     // Audio //
     public AudioSource AudioS;
+    public AudioClip[] Death;
+    public AudioClip[] Gore;
+    public AudioClip[] DamageS;
+    private bool HealthSound1 = false;
+    private bool HealthSound2 = false;
 
     // Getting components.
     void Start()
     {
         effecttransform = this.gameObject.transform.GetChild(4);
         AudioS = FindObjectOfType<AudioSource>();
-        scoreScript = FindObjectOfType<Score>(); 
+        scoreScript = FindObjectOfType<Score>();
         healthPlayer = FindObjectOfType<Health>();
         Player = PlayerManager.instance.player.transform;
     }
@@ -66,23 +70,23 @@ public class Enemy : MonoBehaviour
         AudioS.PlayOneShot(AudioImpact[Random.Range(0, AudioImpact.Length)]);
         if (health <= 0f)
         {
+            AudioS.PlayOneShot(Death[Random.Range(0, Death.Length)]);
             Die();
-            AudioS.PlayOneShot(deathAudio);
         }
     }
 
     // Damage to player.
     private float nextActionTime = 0.0f;
-    public float period = 2f;
+    public float Attackperiod = 2f;
 
     void Update()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= AttackRadious)
         {
-            if (Time.time > nextActionTime)
+            if (Time.unscaledTime > nextActionTime)
             {
-                nextActionTime = Time.time + period;
+                nextActionTime = Time.unscaledTime + Attackperiod;
                 healthPlayer.health -= Damage;
             }
         }
@@ -92,6 +96,7 @@ public class Enemy : MonoBehaviour
             Eye2.GetComponent<MeshRenderer>().material = EyeDamage;
             Body.GetComponent<MeshRenderer>().material = BodyDamage;
             EyeSurfes.GetComponent<MeshRenderer>().material = EyeBaseDamage;
+            HealthToShowDamageS();
         }
         if (health <= HealthToShowHardDamage)
         {
@@ -99,6 +104,7 @@ public class Enemy : MonoBehaviour
             Eye2.GetComponent<MeshRenderer>().material = EyeHardDamage;
             Body.GetComponent<MeshRenderer>().material = BodyHardDamage;
             EyeSurfes.GetComponent<MeshRenderer>().material = EyeBaseHardDamage;
+            HealthToShowDamageHardS();
         }
     }
 
@@ -117,5 +123,25 @@ public class Enemy : MonoBehaviour
         scoreScript.score += ScoreAdded;
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
+        AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
+
+    }
+
+    void HealthToShowDamageS()
+    {
+        if (HealthSound1 == false)
+        {
+            /* AudioS.PlayOneShot(DamageS[Random.Range(0, DamageS.Length)]); */
+            HealthSound1 = true;
+        }
+
+    }
+    void HealthToShowDamageHardS()
+    {
+        if(HealthSound2 == false)
+        {
+            /* AudioS.PlayOneShot(DamageS[Random.Range(0, DamageS.Length)]); */
+            HealthSound2 = true;
+        }
     }
 }

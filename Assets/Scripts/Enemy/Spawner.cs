@@ -186,7 +186,6 @@ public class Spawner : MonoBehaviour
     private void spawnEnemy()
     {
         GameObject Enemy = (GameObject)Instantiate(Enemies[enemyLevel], gameObject.transform.position, Quaternion.identity);
-        Enemy.SendMessage("setName", SpawnID);
         // Increase the total number of enemies spawned and the number of spawned enemies
         numEnemy++;
         spawnedEnemy++;
