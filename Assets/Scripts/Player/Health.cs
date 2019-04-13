@@ -31,5 +31,9 @@ public class Health : MonoBehaviour
             GameOver.SetActive(true);
             // Death animation should be write here
         }
+        if (health > 100)
+        {
+            health = 100;
+        }
     }
 }

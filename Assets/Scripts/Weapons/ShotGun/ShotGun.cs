@@ -43,49 +43,49 @@ public class ShotGun : MonoBehaviour
 
     void OnEnable()
     {
-        Shell.SetActive(true);
+            Shell.SetActive(true);
     }
     void OnDisable()
     {
-        Shell.SetActive(false);
+            Shell.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5)
-        {
-            for (int i = 0; i < amountOfProjectiles; i++)
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5)
             {
-                Shoot();
+                for (int i = 0; i < amountOfProjectiles; i++)
+                {
+                    Shoot();
+                }
+                nextFire = Time.time + fireRate;
             }
-            nextFire = Time.time + fireRate;
-        }
 
 
 
-        if (ammo <= 0 && shootpermission == true)
-        {
-            ReloadNOW = true;
-            shootpermission = false;
-            animator.SetTrigger("Reload");
-            ammoText.text = "0";
-            ammoTextActive.SetActive(false);
-            ReloadImage.SetActive(true);
-        }
+            if (ammo <= 0 && shootpermission == true)
+            {
+                ReloadNOW = true;
+                shootpermission = false;
+                animator.SetTrigger("Reload");
+                ammoText.text = "0";
+                ammoTextActive.SetActive(false);
+                ReloadImage.SetActive(true);
+            }
 
-        if (Input.GetButtonDown("Reload") && ammo <= 10)
-        {
-            ReloadNOW = true;
-            animator.SetTrigger("Reload");
-            shootpermission = false;
-            ammoText.text = "0";
-            ammoTextActive.SetActive(false);
-            ReloadImage.SetActive(true);
-        }
-        if (ammo > 0 && ReloadNOW == false)
-        {
-            ammoText.text = ammo.ToString();
-        }
+            if (Input.GetButtonDown("Reload") && ammo <= 10)
+            {
+                ReloadNOW = true;
+                animator.SetTrigger("Reload");
+                shootpermission = false;
+                ammoText.text = "0";
+                ammoTextActive.SetActive(false);
+                ReloadImage.SetActive(true);
+            }
+            if (ammo > 0 && ReloadNOW == false)
+            {
+                ammoText.text = ammo.ToString();
+            }
     }
 
     void Shoot()
