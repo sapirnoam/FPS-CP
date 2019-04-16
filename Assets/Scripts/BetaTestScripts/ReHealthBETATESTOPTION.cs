@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class ReHealthBETATESTOPTION : MonoBehaviour
 {
     public Health health;
     public GameObject Gameover;
     public GameManager gm;
+    public Text text;
+
     public void LateUpdate()
     {
-        if (Input.GetKeyDown("t"))
+        if (Input.GetKeyDown("t") && (Input.GetKeyDown("joystick button 3")))
         {
             if (health.health <= 0)
             {

@@ -52,18 +52,26 @@ public class ShotGun : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5)
-            {
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
+        {
                 for (int i = 0; i < amountOfProjectiles; i++)
                 {
                     Shoot();
                 }
                 nextFire = Time.time + fireRate;
             }
+        if (Input.GetAxis("RightTrigger") > 0f && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
+        {
+            for (int i = 0; i < amountOfProjectiles; i++)
+            {
+                Shoot();
+            }
+            nextFire = Time.time + fireRate;
+        }
 
 
 
-            if (ammo <= 0 && shootpermission == true)
+        if (ammo <= 0 && shootpermission == true)
             {
                 ReloadNOW = true;
                 shootpermission = false;

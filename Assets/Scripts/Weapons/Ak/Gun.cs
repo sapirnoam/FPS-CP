@@ -41,10 +41,15 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
         {
           nextTimeToFire = Time.time + 1f / fireRate;
           Shoot();
+        }
+        if (Input.GetAxis("RightTrigger") > 0f && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+            Shoot();
         }
         if (ammo <= 0 && shootpermission == true)
         {

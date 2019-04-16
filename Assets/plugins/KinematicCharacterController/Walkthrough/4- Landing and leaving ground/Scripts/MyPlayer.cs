@@ -39,7 +39,7 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
 
         private void Update()
         {
-            if (Input.GetKeyDown("v"))
+            if (Input.GetButtonDown("ChangeView"))
             {
                 toggle = !toggle;
 
@@ -66,6 +66,15 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
                     OrbitCamera.MaxDistance += 1;
                 }
                 if (Input.GetKey(KeyCode.PageDown) && isTPS == true && OrbitCamera.MaxDistance >= 5)
+                {
+                    OrbitCamera.MaxDistance -= 1;
+                }
+
+                if (Input.GetAxis("DpadZOOM") > 0f && isTPS == true && OrbitCamera.MaxDistance <= 22)
+                {
+                    OrbitCamera.MaxDistance += 1;
+                }
+                if (Input.GetAxis("DpadZOOM") < 0f && isTPS == true && OrbitCamera.MaxDistance >= 5)
                 {
                     OrbitCamera.MaxDistance -= 1;
                 }
@@ -116,7 +125,7 @@ namespace KinematicCharacterController.Walkthrough.LandingLeavingGround
             characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
             characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
             characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
-            characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
+            characterInputs.JumpDown = Input.GetButtonDown("Jump");
 
             // Apply inputs to character
             Character.SetInputs(ref characterInputs);

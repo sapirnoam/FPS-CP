@@ -18,14 +18,14 @@ public class WeaponsSwitcher : MonoBehaviour
         {
             int previousSelectedWeapon = selectedWeapon;
 
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f && Time.timeScale >= 0.5) // Should assign a buttons to this void (Input settings) for controller support
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetButtonDown("Left Bump") && Time.timeScale >= 0.5) // Should assign a buttons to this void (Input settings) for controller support
             {
                 if (selectedWeapon >= transform.childCount - 1)
                     selectedWeapon = 0;
                 else
                     selectedWeapon++;
             }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f && Time.timeScale >= 0.5) // Should assign a buttons to this void (Input settings) for controller support
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetButtonDown("Right Bump") && Time.timeScale >= 0.5) // Should assign a buttons to this void (Input settings) for controller support
             {
                 if (selectedWeapon <= 0)
                     selectedWeapon = transform.childCount - 1;
