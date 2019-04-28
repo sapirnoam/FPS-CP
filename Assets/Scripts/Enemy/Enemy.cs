@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         AudioS = FindObjectOfType<AudioSource>();
         scoreScript = FindObjectOfType<Score>();
         healthPlayer = FindObjectOfType<Health>();
-        BloodController = FindObjectOfType<RainCameraController>();
+        BloodController = GameObject.Find("Splatter Camera").GetComponent<RainCameraController>();
         Player = PlayerManager.instance.player.transform;
     }
 

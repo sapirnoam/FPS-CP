@@ -8,6 +8,8 @@ public class ReHealthBETATESTOPTION : MonoBehaviour
 {
     public Health health;
     public GameObject Gameover;
+    public GameObject SplatterCamera;
+
 
     public void LateUpdate()
     {
@@ -17,6 +19,7 @@ public class ReHealthBETATESTOPTION : MonoBehaviour
             {
                 health.health = 100;
                 Gameover.SetActive(false);
+                SplatterCamera.SetActive(false);
             }
         }
     }
