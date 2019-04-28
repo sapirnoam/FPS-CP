@@ -8,11 +8,9 @@ public class Health : MonoBehaviour
     public float health = 100;
     public Slider slider;
     public GameObject GameOver;
-    public bool IsCollide = false;
     public Animator anim;
-
-
-
+    public RainCameraController BloodController;
+    public GameObject FrictionFlowRain;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +24,20 @@ public class Health : MonoBehaviour
     public void FixedUpdate()
     {
         slider.value = health;
-        if (health < 0)
+        if (health < 0 || health == 0)
         {
             GameOver.SetActive(true);
             // Death animation should be write here
+            health = 0;
+            BloodController.Play();
         }
         if (health > 100)
         {
             health = 100;
+        }
+        if (health < 8)
+        {
+            FrictionFlowRain.SetActive(true);
         }
     }
 }

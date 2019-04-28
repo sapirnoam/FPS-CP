@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
     Transform Player; // Get Player Transform for the gizmo
     public Health healthPlayer; // Player Health script
     public float AttackRadious = 10; // How far the enemy hit
+    public RainCameraController BloodController; // On Screen blood effect for damage
 
     // Audio //
     public AudioSource AudioS;
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
         AudioS = FindObjectOfType<AudioSource>();
         scoreScript = FindObjectOfType<Score>();
         healthPlayer = FindObjectOfType<Health>();
+        BloodController = FindObjectOfType<RainCameraController>();
         Player = PlayerManager.instance.player.transform;
     }
 
@@ -88,6 +90,10 @@ public class Enemy : MonoBehaviour
             {
                 nextActionTime = Time.unscaledTime + Attackperiod;
                 healthPlayer.health -= Damage;
+                if (healthPlayer.health <= 80)
+                {
+                    BloodController.Play();
+                }
             }
         }
         if (health <= HealthToShowDamage)
