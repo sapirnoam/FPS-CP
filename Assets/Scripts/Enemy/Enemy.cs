@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     public float ScoreAdded = 10; // The money value that should be added after enemy death.
     public Score scoreScript; // Get the Money information.
 
+    // Managers //
+    public CrossHairManager crossHairManager;
+
 
     //Materials / Damage//
     //Damage
@@ -60,6 +63,7 @@ public class Enemy : MonoBehaviour
         effecttransform = this.gameObject.transform.GetChild(4);
         AudioS = FindObjectOfType<AudioSource>();
         scoreScript = FindObjectOfType<Score>();
+        crossHairManager = FindObjectOfType<CrossHairManager>();
         healthPlayer = FindObjectOfType<Health>();
         BloodController = GameObject.Find("Splatter Camera").GetComponent<RainCameraController>();
         Player = PlayerManager.instance.player.transform;
@@ -68,6 +72,7 @@ public class Enemy : MonoBehaviour
     // Damage to the Enemy.
     public void TakeDamage(float amount)
     {
+        crossHairManager.Hit = true;
         health -= amount;
         AudioS.PlayOneShot(AudioImpact[Random.Range(0, AudioImpact.Length)]);
         if (health <= 0f)
