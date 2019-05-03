@@ -8,8 +8,14 @@ public class ReHealthBETATESTOPTION : MonoBehaviour
 {
     public Health health;
     public GameObject Gameover;
-    public GameObject SplatterCamera;
 
+    public GameObject FrictionFlowRain;
+
+    private void Start()
+    {
+        health = GameObject.Find("PlayerManager").GetComponent<Health>();
+        Gameover = GameObject.Find("gameover").GetComponent<GameObject>();
+    }
 
     public void LateUpdate()
     {
@@ -19,7 +25,7 @@ public class ReHealthBETATESTOPTION : MonoBehaviour
             {
                 health.health = 100;
                 Gameover.SetActive(false);
-                SplatterCamera.SetActive(false);
+                FrictionFlowRain.SetActive(false);
             }
         }
     }

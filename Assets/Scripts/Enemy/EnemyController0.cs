@@ -19,7 +19,7 @@ public class EnemyController0 : MonoBehaviour
     void Start()
     {
         Player = PlayerManager.instance.player.transform;
-        AudioS = FindObjectOfType<AudioSource>();
+        AudioS = GameObject.Find("Ambient Audio").GetComponent<AudioSource>();
 
     }
 

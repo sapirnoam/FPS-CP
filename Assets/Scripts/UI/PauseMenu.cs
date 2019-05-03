@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+
+    public GameObject Settings;
     public GameObject pausemenuUI;
     public GameManager gm;
     public AudioSource audiosource;
@@ -14,15 +16,19 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Settings"))
+        if (Input.GetButtonDown("Settings")) //Esc key
         {
-            if (GameIsPaused)
+            if (GameIsPaused && Settings.activeSelf == false)
             {
                 Resume();
             }
             else
             {
                 Pause();
+            }
+            if (GameIsPaused && Settings.activeSelf == true)
+            {
+                Settings.SetActive(false);
             }
         }
     }

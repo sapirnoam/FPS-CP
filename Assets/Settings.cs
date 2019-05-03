@@ -8,7 +8,6 @@ public class Settings : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-
     public GameObject fps;
     public GameObject AutoQuality;
 
@@ -17,7 +16,7 @@ public class Settings : MonoBehaviour
     Resolution[] resolutions;
 
 
-    private void Start()
+    void Start()
     {
 
         resolutions = Screen.resolutions;
@@ -42,6 +41,11 @@ public class Settings : MonoBehaviour
         resolutionsDropDown.value = currentResulotionIndex;
         resolutionsDropDown.RefreshShownValue();
     }
+
+    private void LateUpdate()
+    {
+    }
+
 
     public void SetVolume(float volume)
     {
