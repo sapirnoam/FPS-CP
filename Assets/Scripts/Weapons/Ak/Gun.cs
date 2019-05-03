@@ -61,7 +61,7 @@ public class Gun : MonoBehaviour
             ReloadImage.SetActive(true);
         }
 
-        if (Input.GetButtonDown("Reload") && ammo <= 59)
+        if (Input.GetButtonDown("Reload") && ammo <= 59 && Time.timeScale >= 0.5)
         {
                 ReloadNOW = true;
                 animator.SetTrigger("Reload");

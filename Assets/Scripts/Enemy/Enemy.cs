@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         effecttransform = this.gameObject.transform.GetChild(4);
-        AudioS = FindObjectOfType<AudioSource>();
+        AudioS = GameObject.Find("Ambient Audio").GetComponent<AudioSource>();
         scoreScript = FindObjectOfType<Score>();
         crossHairManager = FindObjectOfType<CrossHairManager>();
         healthPlayer = FindObjectOfType<Health>();

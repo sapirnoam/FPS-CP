@@ -53,7 +53,7 @@ public class ShotGun : MonoBehaviour
     void Update()
     {
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
-        {
+            {
                 for (int i = 0; i < amountOfProjectiles; i++)
                 {
                     Shoot();
@@ -81,7 +81,7 @@ public class ShotGun : MonoBehaviour
                 ReloadImage.SetActive(true);
             }
 
-            if (Input.GetButtonDown("Reload") && ammo <= 10)
+            if (Input.GetButtonDown("Reload") && ammo <= 10 && Time.timeScale >= 0.5)
             {
                 ReloadNOW = true;
                 animator.SetTrigger("Reload");

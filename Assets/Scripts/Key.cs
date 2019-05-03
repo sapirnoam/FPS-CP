@@ -14,7 +14,6 @@ public class Key : MonoBehaviour
     {
             Km.Keys += 1;
             Destroy(gameObject);
-            Debug.Log("w");
     }
 }
 
