@@ -41,6 +41,10 @@ public class ShotGun : MonoBehaviour
     private float nextFire = 0.0F;
     public float AllowReload = 1.55f;
 
+
+    public Transform WeaponParent;
+    public Transform WeaponsHolder;
+
     void OnEnable()
     {
             Shell.SetActive(true);
@@ -52,6 +56,8 @@ public class ShotGun : MonoBehaviour
 
     void Update()
     {
+        if (WeaponParent.IsChildOf(WeaponsHolder))
+        {
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 for (int i = 0; i < amountOfProjectiles; i++)
@@ -60,18 +66,18 @@ public class ShotGun : MonoBehaviour
                 }
                 nextFire = Time.time + fireRate;
             }
-        if (Input.GetAxis("RightTrigger") > 0f && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
-        {
-            for (int i = 0; i < amountOfProjectiles; i++)
+            if (Input.GetAxis("RightTrigger") > 0f && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
             {
-                Shoot();
+                for (int i = 0; i < amountOfProjectiles; i++)
+                {
+                    Shoot();
+                }
+                nextFire = Time.time + fireRate;
             }
-            nextFire = Time.time + fireRate;
-        }
 
 
 
-        if (ammo <= 0 && shootpermission == true)
+            if (ammo <= 0 && shootpermission == true)
             {
                 ReloadNOW = true;
                 shootpermission = false;
@@ -94,6 +100,7 @@ public class ShotGun : MonoBehaviour
             {
                 ammoText.text = ammo.ToString();
             }
+        }
     }
 
     void Shoot()

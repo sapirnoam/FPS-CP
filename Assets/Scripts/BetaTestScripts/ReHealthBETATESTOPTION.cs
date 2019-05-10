@@ -14,7 +14,6 @@ public class ReHealthBETATESTOPTION : MonoBehaviour
     private void Start()
     {
         health = GameObject.Find("PlayerManager").GetComponent<Health>();
-        Gameover = GameObject.Find("gameover").GetComponent<GameObject>();
     }
 
     public void LateUpdate()

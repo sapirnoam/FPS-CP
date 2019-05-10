@@ -31,6 +31,10 @@ public class Gun : MonoBehaviour
     private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
     public float AllowReload = 1.30f;
+
+    public Transform WeaponParent;
+    public Transform WeaponsHolder;
+
     void OnEnable()
     {
         LightBullet.SetActive(true);
@@ -41,39 +45,46 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
+        if (WeaponParent.IsChildOf(WeaponsHolder))
         {
-          nextTimeToFire = Time.time + 1f / fireRate;
-          Shoot();
-        }
-        if (Input.GetAxis("RightTrigger") > 0f && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
-        if (ammo <= 0 && shootpermission == true)
-        {
-            ReloadNOW = true;
-            shootpermission = false;
-            animator.SetTrigger("Reload");
-            ammoText.text = "0";
-            ammoTextActive.SetActive(false);
-            ReloadImage.SetActive(true);
-        }
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+            if (Input.GetAxis("RightTrigger") > 0f && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+            if (ammo <= 0 && shootpermission == true)
+            {
+                ReloadNOW = true;
+                shootpermission = false;
+                animator.SetTrigger("Reload");
+                ammoText.text = "0";
+                ammoTextActive.SetActive(false);
+                ReloadImage.SetActive(true);
+            }
 
-        if (Input.GetButtonDown("Reload") && ammo <= 59 && Time.timeScale >= 0.5)
-        {
+            if (Input.GetButtonDown("Reload") && ammo <= 59 && Time.timeScale >= 0.5)
+            {
                 ReloadNOW = true;
                 animator.SetTrigger("Reload");
                 shootpermission = false;
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
+            }
+            if (ammo > 0 && ReloadNOW == false)
+            {
+                ammoText.text = ammo.ToString();
+            }
         }
-        if (ammo > 0 && ReloadNOW == false)
-        {
-            ammoText.text = ammo.ToString();
+        else{
+            return;
         }
+
     }
 
 void Shoot()
