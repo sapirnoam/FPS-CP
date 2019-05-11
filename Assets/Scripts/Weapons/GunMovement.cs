@@ -6,15 +6,18 @@ using KinematicCharacterController.Walkthrough.LandingLeavingGround;
 public class GunMovement : MonoBehaviour
 {
     public Transform Target;
-    public Transform WeaponParent;
+    public Transform WeaponThis;
     public Transform WeaponsHolder;
 
-    public Vector3 pickUpPosition;
-    public Vector3 pickUpRotation;
+    void Start()
+    {
+        Target.GetComponent <Transform>();
+        WeaponThis.GetComponent<Transform>();
+    }
 
     public void LateUpdate()
     {
-        if (WeaponParent.IsChildOf(WeaponsHolder))
+        if (WeaponThis.IsChildOf(WeaponsHolder))
         {
             transform.LookAt(Target);
         }

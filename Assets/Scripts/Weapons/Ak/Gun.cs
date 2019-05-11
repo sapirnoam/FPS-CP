@@ -35,18 +35,16 @@ public class Gun : MonoBehaviour
     public Transform WeaponParent;
     public Transform WeaponsHolder;
 
-    void OnEnable()
-    {
-        LightBullet.SetActive(true);
-    }
     void OnDisable()
     {
         LightBullet.SetActive(false);
     }
+
     void Update()
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
+            LightBullet.SetActive(true);
             if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
@@ -82,7 +80,7 @@ public class Gun : MonoBehaviour
             }
         }
         else{
-            return;
+            LightBullet.SetActive(false);
         }
 
     }

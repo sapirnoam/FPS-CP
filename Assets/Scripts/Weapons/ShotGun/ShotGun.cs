@@ -45,10 +45,6 @@ public class ShotGun : MonoBehaviour
     public Transform WeaponParent;
     public Transform WeaponsHolder;
 
-    void OnEnable()
-    {
-            Shell.SetActive(true);
-    }
     void OnDisable()
     {
             Shell.SetActive(false);
@@ -58,6 +54,7 @@ public class ShotGun : MonoBehaviour
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
+            Shell.SetActive(true);
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 for (int i = 0; i < amountOfProjectiles; i++)
@@ -74,8 +71,6 @@ public class ShotGun : MonoBehaviour
                 }
                 nextFire = Time.time + fireRate;
             }
-
-
 
             if (ammo <= 0 && shootpermission == true)
             {
@@ -100,6 +95,9 @@ public class ShotGun : MonoBehaviour
             {
                 ammoText.text = ammo.ToString();
             }
+        }
+        else {
+            Shell.SetActive(false);
         }
     }
 
@@ -131,11 +129,11 @@ public class ShotGun : MonoBehaviour
 
     void ReloadAnimation()
     {
-        ammo = 12;
-        shootpermission = true;
-        ReloadNOW = false;
-        ammoTextActive.SetActive(true);
-        ReloadImage.SetActive(false);
+            ammo = 12;
+            shootpermission = true;
+            ReloadNOW = false;
+            ammoTextActive.SetActive(true);
+            ReloadImage.SetActive(false);
     }
     void ReloadSound()
     {
