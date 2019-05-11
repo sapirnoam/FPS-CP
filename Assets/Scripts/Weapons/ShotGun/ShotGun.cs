@@ -45,9 +45,12 @@ public class ShotGun : MonoBehaviour
     public Transform WeaponParent;
     public Transform WeaponsHolder;
 
+    public GameObject crosshair;
+
     void OnDisable()
     {
-            Shell.SetActive(false);
+        Shell.SetActive(false);
+        crosshair.SetActive(false);
     }
 
     void Update()
@@ -55,6 +58,8 @@ public class ShotGun : MonoBehaviour
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
             Shell.SetActive(true);
+            crosshair.SetActive(true);
+
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 for (int i = 0; i < amountOfProjectiles; i++)

@@ -35,9 +35,13 @@ public class Gun : MonoBehaviour
     public Transform WeaponParent;
     public Transform WeaponsHolder;
 
+    public GameObject crosshair;
+
     void OnDisable()
     {
         LightBullet.SetActive(false);
+        crosshair.SetActive(false);
+
     }
 
     void Update()
@@ -45,6 +49,7 @@ public class Gun : MonoBehaviour
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
             LightBullet.SetActive(true);
+            crosshair.SetActive(true);
             if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
