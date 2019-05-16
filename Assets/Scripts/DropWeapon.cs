@@ -19,7 +19,7 @@ public class DropWeapon : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //Should assign xbox controller here.
+        if (Input.GetButtonDown("Drop")) //Should assign xbox controller here.
         {
             for (int i = 0; i < WeaponsHolderGameobject.transform.childCount; i++)
             {

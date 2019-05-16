@@ -29,7 +29,7 @@ public class PickUp : MonoBehaviour
             {
                 PickUpText.SetActive(true);
                 //if the user presses F
-                if (Input.GetKeyDown(KeyCode.F)) //Should assign xbox controller here.
+                if (Input.GetButtonDown("PickUp")) //Should assign xbox controller here.
                 {
                     for (int i = 0; i < playerHand.transform.childCount; i++)
                     {

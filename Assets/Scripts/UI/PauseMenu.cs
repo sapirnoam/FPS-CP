@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip OpenMenuSound;
     public AudioClip ClickSound;
-
+    public Button ResumeButton;
     void Update()
     {
         if (Input.GetButtonDown("Settings")) //Esc key
@@ -41,17 +43,19 @@ public class PauseMenu : MonoBehaviour
         gm.CursorLock = true;
         AudioListener.pause = false;
         AudioListener.volume = 1;
+
     }
 
     void Pause()
     {
+
         pausemenuUI.SetActive(true);
         GameIsPaused = true;
         gm.CursorLock = false;
         AudioListener.pause = true;
         AudioListener.volume = 0;
         Time.timeScale = 0f;
-
+        ResumeButton.Select();
     }
     public void OpenOptions()
     {
@@ -66,5 +70,4 @@ public class PauseMenu : MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevel);
     }
-
 }
