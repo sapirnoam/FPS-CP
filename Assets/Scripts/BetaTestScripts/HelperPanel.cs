@@ -7,6 +7,8 @@ public class HelperPanel : MonoBehaviour
     public GameManager gm;
 
     private bool toggle;
+    private bool ToggleCanvas;
+    public GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,6 @@ public class HelperPanel : MonoBehaviour
         if (Input.GetKeyDown("p"))
         {
             toggle = !toggle;
-
             if (toggle)
             {
                 helper.SetActive(true);
@@ -30,6 +31,19 @@ public class HelperPanel : MonoBehaviour
                 gm.CursorLock = true;
                 helper.SetActive(false);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            ToggleCanvas = !ToggleCanvas;
+            if (ToggleCanvas)
+            {
+                canvas.SetActive(false);
+            }
+            if(!ToggleCanvas)
+            {
+                canvas.SetActive(true);   
+             }
+
         }
     }
 }

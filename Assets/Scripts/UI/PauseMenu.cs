@@ -13,9 +13,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausemenuUI;
     public GameManager gm;
     public AudioSource audiosource;
-    public AudioClip OpenMenuSound;
-    public AudioClip ClickSound;
-    public Button ResumeButton;
     void Update()
     {
         if (Input.GetButtonDown("Settings")) //Esc key
@@ -55,7 +52,6 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = true;
         AudioListener.volume = 0;
         Time.timeScale = 0f;
-        ResumeButton.Select();
     }
     public void OpenOptions()
     {

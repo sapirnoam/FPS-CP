@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 129524626822812390}
   m_Layer: 0
   m_Name: DummyPofle 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   GiveHealth: 6
   ScoreAdded: 10
   scoreScript: {fileID: 0}
+  crossHairManager: {fileID: 0}
   EyeDamage: {fileID: 2100000, guid: 6e67619f27e2b0d488771c2d897fcb69, type: 2}
   EyeBaseDamage: {fileID: 2100000, guid: 57871da830e0b2f4b92cc93a092230da, type: 2}
   BodyDamage: {fileID: 2100000, guid: 3babe290f650b024289e8f0581d3a7ee, type: 2}
