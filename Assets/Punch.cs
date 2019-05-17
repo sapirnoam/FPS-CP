@@ -18,7 +18,6 @@ public class Punch : MonoBehaviour
     {
         if (Collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("EnemyTouch");
             Enemy enemy = Collision.GetComponent<Enemy>();
             if (enemy != null)
             {

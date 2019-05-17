@@ -12,10 +12,7 @@ public class LoadingGame : MonoBehaviour
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
-        yield return new WaitForSeconds(9);
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .2f);

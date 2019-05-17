@@ -9,7 +9,7 @@ public class PunchMain : MonoBehaviour
     public Transform WeaponParent;
     public Transform WeaponsHolder;
 
-    public float fireRate = 1.2F;
+    public float fireRate = 0.0F;
     private float nextFire = 0.0F;
 
     public Camera Cam;
@@ -25,14 +25,12 @@ public class PunchMain : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && Time.timeScale >= 0.5)
             {
                 IsPlaying = true;
-                DamageAllowed = true;
                 Punch();
                 nextFire = Time.time + fireRate;
 
             }
             if (Input.GetAxis("RightTrigger") > 0f && Time.time > nextFire && Time.timeScale >= 0.5)
             {
-                IsPlaying = true;
                 DamageAllowed = true;
                 Punch();
                 nextFire = Time.time + fireRate;
@@ -58,6 +56,12 @@ public class PunchMain : MonoBehaviour
             anim.SetTrigger("Atc" + randomNumber);
         }
     }
+
+    public void AllowDamage()
+    {
+        DamageAllowed = true;
+    }
+
 
     public void DisableDamage()
     {
