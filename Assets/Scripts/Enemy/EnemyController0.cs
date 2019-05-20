@@ -14,13 +14,14 @@ public class EnemyController0 : MonoBehaviour
 
     public AudioSource AudioS;
     public AudioClip[] Angry;
+
     private bool angryPlay = false;
     // Start is called before the first frame update
+
     void Start()
     {
-        Player = PlayerManager.instance.player.transform;
+        Player = GameObject.FindWithTag("EnemyTarget").transform;
         AudioS = GameObject.Find("Ambient Audio").GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame

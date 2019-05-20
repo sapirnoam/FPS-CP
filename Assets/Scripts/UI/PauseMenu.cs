@@ -64,6 +64,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResetGame()
     {
+        Time.timeScale = 1f;
         Application.LoadLevel(Application.loadedLevel);
     }
 }

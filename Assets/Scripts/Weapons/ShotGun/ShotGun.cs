@@ -102,6 +102,7 @@ public class ShotGun : MonoBehaviour
         }
         else {
             Shell.SetActive(false);
+            crosshair.SetActive(false);
         }
     }
 

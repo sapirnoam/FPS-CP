@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         crossHairManager = FindObjectOfType<CrossHairManager>();
         healthPlayer = FindObjectOfType<Health>();
         BloodController = GameObject.Find("Splatter Camera").GetComponent<RainCameraController>();
-        Player = PlayerManager.instance.player.transform;
+        Player = GameObject.FindWithTag("EnemyTarget").transform;
     }
 
     // Damage to the Enemy.

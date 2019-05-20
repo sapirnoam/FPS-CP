@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
-
+    [SerializeField]
     public float damageMin = 5;
     public float damageMax = 13;
     public float range = 100f;
@@ -50,6 +50,7 @@ public class Gun : MonoBehaviour
         {
             LightBullet.SetActive(true);
             crosshair.SetActive(true);
+
             if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
@@ -86,6 +87,7 @@ public class Gun : MonoBehaviour
         }
         else{
             LightBullet.SetActive(false);
+            crosshair.SetActive(false);
         }
 
     }
