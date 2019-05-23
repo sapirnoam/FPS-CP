@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         crossHairManager = FindObjectOfType<CrossHairManager>();
         healthPlayer = FindObjectOfType<Health>();
         BloodController = GameObject.Find("Splatter Camera").GetComponent<RainCameraController>();
-        Player = GameObject.FindWithTag("EnemyTarget").transform;
+        Player = PlayerManager.instance.player.transform;
     }
 
     // Damage to the Enemy.
@@ -135,7 +135,13 @@ public class Enemy : MonoBehaviour
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
         AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
-
+    }
+    public void DieWithOutGive()
+    {
+        Destroy(gameObject);
+        Instantiate(effect, effecttransform.position, effecttransform.rotation);
+        AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
+        Debug.Log("Exectute");
     }
 
     void HealthToShowDamageS()

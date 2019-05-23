@@ -13,7 +13,6 @@ public class DropWeapon : MonoBehaviour
     {
         WeaponThis.GetComponent<Transform>();
         rb.GetComponent<Rigidbody>();
-        collider.GetComponent<Collider>();
     }
 
     // Update is called once per frame

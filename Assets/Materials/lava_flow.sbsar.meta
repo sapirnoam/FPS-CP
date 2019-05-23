@@ -23,8 +23,7 @@ ScriptedImporter:
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://lava_flow\" label=\"\" >\n  <presetinput identifier=\"cracks\"
-      uid=\"1478425765\" type=\"0\" value=\"0.276\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://lava_flow\" label=\"\" >\n </sbspreset>\n"
     shaderName: Standard
     outputNames: baseColor,normal,emissive,metallic,height,ambientOcclusion
     texturePackingList:
