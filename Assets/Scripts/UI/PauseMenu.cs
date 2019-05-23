@@ -65,6 +65,7 @@ public class PauseMenu : MonoBehaviour
     public void ResetGame()
     {
         Time.timeScale = 1f;
+        AudioListener.volume = 1;
         Application.LoadLevel(Application.loadedLevel);
     }
 }

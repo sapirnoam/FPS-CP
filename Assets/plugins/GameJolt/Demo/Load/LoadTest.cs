@@ -34,24 +34,33 @@ namespace GameJolt.Demo.Load {
             else // internet available
             {
                 Debug.Log("InternetAvailable");
-                GameJoltUI.Instance.ShowSignIn(success =>
+                if (!GameJoltAPI.Instance.HasUser)
                 {
-                    GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "Closed the window :(");
-                    GameJolt.API.Trophies.Unlock(107285);
-                });
-                if (GameJoltAPI.Instance.HasUser)
-                {
-                    StartCoroutine(MoveScene());
+                    GameJoltUI.Instance.ShowSignIn(success =>
+                    {
+                        GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "Closed the window :(");
+                        GameJolt.API.Trophies.Unlock(107285);
+                    });
                 }
             }
         }
+        private void Update()
+        {
 
+        }
         IEnumerator MoveScene()
         {
             SignedInSuccess.SetActive(true);
             yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(1);
+        }
+        public void PoflesSlayer()
+        {
+            if (GameJoltAPI.Instance.HasUser)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
         IEnumerator NoConnection()
         {
@@ -95,15 +104,9 @@ namespace GameJolt.Demo.Load {
         {
             Start();
         }
-
-        public void ShowBestLeader()
+        public void ShowLeader()
         {
             GameJoltUI.Instance.ShowLeaderboards();
-        }
-
-        public void ShowTotalLeader()
-        {
-
         }
 	}
 }

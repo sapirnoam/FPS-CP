@@ -132,6 +132,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         scoreScript.score += ScoreAdded;
+        scoreScript.Kills += 1;
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
         AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
@@ -141,7 +142,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
-        Debug.Log("Exectute");
+
     }
 
     void HealthToShowDamageS()

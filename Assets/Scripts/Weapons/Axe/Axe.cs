@@ -17,6 +17,7 @@ public class Axe : MonoBehaviour
     public MeshCollider meshCollider;
 
 
+    public GameObject WeaponIcon;
     // Start is called before the first frame update
     // Update is called once per frame
     void FixedUpdate()
@@ -24,7 +25,6 @@ public class Axe : MonoBehaviour
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
             meshCollider.isTrigger = true;
-
             if (Input.GetButtonDown("Fire1") && Time.time > nextFire && Time.timeScale >= 0.5)
             {
                 DamageAllowed = true;
@@ -42,6 +42,7 @@ public class Axe : MonoBehaviour
         else
         {
             meshCollider.isTrigger = false;
+            WeaponIcon.SetActive(false);
         }
     }
     void Hover()

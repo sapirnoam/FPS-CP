@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     {
         public bool CursorLock;
         private bool IsLocked;
+    public bool IsDead = false;
         // Start is called before the first frame update
         void Start()
         {

@@ -13,6 +13,7 @@ public class PofleAnimatorController : MonoBehaviour
     public GameObject effect; // The death effect
     public GameObject effectBlood; // The death effect
     public Health healthManager;
+    public Score score;
     public void Start()
     {
         effecttransform = this.gameObject.transform.GetChild(4);
@@ -40,7 +41,7 @@ public class PofleAnimatorController : MonoBehaviour
 
     public GameObject DeathCamera;
     public GameObject mainCamera;
-    IEnumerator Die()
+    public IEnumerator Die()
     {
         IsDead = true;
         mainCamera.SetActive(false);
@@ -48,19 +49,16 @@ public class PofleAnimatorController : MonoBehaviour
         Instantiate(effectBlood, effecttransform.position, effecttransform.rotation);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         yield return new WaitForSeconds(0.2f);
-
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < 50)
+            if (distance < 300)
             {
                 target.GetComponent<Enemy>().DieWithOutGive();
             }
         }
+        score.PofleAnimator();
         Destroy(gameObject);
-        yield return new WaitForSeconds(1f);
-        //End game scene. Please forward to other script in this line.
-        //Because of the player destroy this script also destroind. PS. Once you forwarding move the Destroy(gaameObject) down.!
     }
 }
