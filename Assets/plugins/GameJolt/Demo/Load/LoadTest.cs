@@ -1,65 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Net;
 using GameJolt.API;
 using GameJolt.UI;
-using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
-
-namespace GameJolt.Demo.Load {
-    public class LoadTest : MonoBehaviour {
-
+public class LoadTest : MonoBehaviour {
         public GameObject SignedInSuccess;
         public GameObject SignInAsAguest;
         public GameObject NoInternet;
         public GameObject SignOut;
+        public GameObject LoginIn;
 
-        private void Start()
+        public Text UserName;
+    private void Start()
         {
-            if (GameJoltAPI.Instance.HasUser) // Account signed in
-            {
-                StartCoroutine(MoveScene());
-                if (Application.internetReachability == NetworkReachability.NotReachable)
-                {
-                    NoInternet.SetActive(true);
-                }
-            }
-
-            if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
-            {
-                StartCoroutine(NoConnection());
-                Debug.Log("NoInternet");
-            }
-            else // internet available
-            {
-                Debug.Log("InternetAvailable");
-                if (!GameJoltAPI.Instance.HasUser)
-                {
-                    GameJoltUI.Instance.ShowSignIn(success =>
-                    {
-                        GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "Closed the window :(");
-                        GameJolt.API.Trophies.Unlock(107285);
-                    });
-                }
-            }
+        LoginIn.SetActive(true);
+        SignOut.SetActive(false);
+        if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
+        {
+            StartCoroutine(NoConnection());
+            LoginIn.SetActive(true);
+            SignOut.SetActive(false);
         }
-        private void Update()
+
+        else // internet available
         {
+                GameJoltUI.Instance.ShowSignIn(success =>
+                {
+                    GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "");
+                    LoginIn.SetActive(false);
+                    SignOut.SetActive(true);
+                });
 
         }
-        IEnumerator MoveScene()
-        {
-            SignedInSuccess.SetActive(true);
-            yield return new WaitForSeconds(1f);
+        }
 
-            SceneManager.LoadScene(1);
+        public void LateUpdate()
+        {
+        UserName.text = GameJoltAPI.Instance.CurrentUser.Name;
         }
         public void PoflesSlayer()
         {
             if (GameJoltAPI.Instance.HasUser)
             {
-                SceneManager.LoadScene(1);
             }
         }
         IEnumerator NoConnection()
@@ -70,25 +53,22 @@ namespace GameJolt.Demo.Load {
             SignInAsAguest.SetActive(true);
         }
 
-        public void SignOutButtonClicked() {
-			if(!GameJoltAPI.Instance.HasUser) {
-				GameJoltUI.Instance.QueueNotification("You're not signed in");
-			} else {
-                GameJoltUI.Instance.QueueNotification("See you soon " + GameJoltAPI.Instance.CurrentUser.Name + "!"); GameJoltAPI.Instance.CurrentUser.SignOut();
-                GameJoltUI.Instance.ShowSignIn(success =>
-                {
-                    GameJoltUI.Instance.QueueNotification(success ? "Welcome back " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "Closed the window");
-                    GameJolt.API.Trophies.Unlock(107285);
-                });
-			}
-		}
+    public void SignOutButtonClicked()
+    {
+        GameJoltAPI.Instance.CurrentUser.SignOut();
+        UserName.text = "NOT CONNECTED";
+        LoginIn.SetActive(true);
+        SignOut.SetActive(false);
+    }
 
 		public void IsSignedInButtonClicked() {
-			if(GameJoltAPI.Instance.HasUser) {
-				GameJoltUI.Instance.QueueNotification(
-					"Signed in as " + GameJoltAPI.Instance.CurrentUser.Name);
-			} else {
-				GameJoltUI.Instance.QueueNotification("Not Signed In :(");
+			{
+            GameJoltUI.Instance.ShowSignIn(success =>
+            {
+                GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "." : "Closed the window");
+                SignOut.SetActive(true);
+                LoginIn.SetActive(false);
+            });
 			}
 		}
         public void SignInAsGuest()
@@ -100,13 +80,12 @@ namespace GameJolt.Demo.Load {
         {
             GameJoltUI.Instance.ShowTrophies();
         }
-        public void Signin()
-        {
-            Start();
-        }
         public void ShowLeader()
         {
             GameJoltUI.Instance.ShowLeaderboards();
         }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 	}
-}
