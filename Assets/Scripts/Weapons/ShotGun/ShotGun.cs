@@ -52,7 +52,7 @@ public class ShotGun : MonoBehaviour
         crosshair.SetActive(false);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {

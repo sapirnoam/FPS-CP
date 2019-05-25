@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausemenuUI;
     public GameManager gm;
     public AudioSource audiosource;
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetButtonDown("Settings")) //Esc key
         {
@@ -58,14 +58,25 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Options.");
 
     }
+
+
+
     public void QuitGame()
     {
-        Application.Quit();
+        Time.timeScale = 1f;
+        AudioListener.volume = 1;
+        SceneManager.LoadScene(0);
     }
     public void ResetGame()
     {
         Time.timeScale = 1f;
         AudioListener.volume = 1;
         Application.LoadLevel(Application.loadedLevel);
+    }
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        AudioListener.volume = 1;
+        SceneManager.LoadScene(0);
     }
 }

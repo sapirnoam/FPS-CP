@@ -6,7 +6,10 @@ using GameJolt.API;
 using GameJolt.UI;
 public class Score : MonoBehaviour
 {
+    [SerializeField]
     public float score = 0; // Made in match //V //Should seen in scoreboard
+    public float HighScore = 0;
+
     public int WavesSurvived = 0; // Made in match //V //Should seen in scoreboard
     public int Kills = 0; //Should seen in scoreboard
     public float GameCoins = 0f; // Made in match + Match coins //V
@@ -32,6 +35,20 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HighScore = PlayerPrefs.GetFloat("Score");
+        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+        {
+            GameJolt.API.DataStore.Get("HighScore", true, (string value) => {
+                if (float.Parse(value) > HighScore)
+                {
+                    HighScore = float.Parse(value);
+                }
+                else
+                    return;
+            });
+        }
+
+
     }
     string scoreTextscore = "Score:"; // A string representing the score to be shown on the website.
     string scoreTextKill = "Kills:"; // A string representing the score to be shown on the website.
@@ -51,11 +68,22 @@ public class Score : MonoBehaviour
         GameJolt.API.Scores.Add((int)WavesSurvived, scoreTextWaves, 422057, "Waves", (bool success) => {
             Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
         });
+        if (score > HighScore)
+        {
+            HighScore = score;
+            PlayerPrefs.SetFloat("Score", HighScore);
+            PlayerPrefs.Save();
+            GameJolt.API.DataStore.Set("HighScore", HighScore.ToString(), true, (bool success) => {
+                Debug.Log("Saved Online");
+            });
+        }
     }
+    bool isGlobal = false;
     private void LateUpdate()
     {
         ScoreTextDead.text = "Score: " + score.ToString();
-        BestScore.text = "Best Score: NOTSETUP! ";
+        BestScore.text = "Best Score: " + HighScore.ToString();
+
         WavesSurvivedTextDead.text = "Survived until wave: " + WavesSurvived.ToString();
         KillsTextDead.text = "Kills: " + Kills.ToString();
         PlatinumEarned.text = "Platinum collected: " + Platinum.ToString();

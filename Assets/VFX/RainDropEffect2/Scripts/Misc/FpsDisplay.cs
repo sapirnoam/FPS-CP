@@ -9,7 +9,7 @@ public class FpsDisplay : MonoBehaviour
     int flameCnt = 0;
     int fps = 0;
     public Text text;
-    void LateUpdate()
+    void Update()
     {
         dt = Time.time - startTime;
         flameCnt += 1;
@@ -20,6 +20,5 @@ public class FpsDisplay : MonoBehaviour
             startTime = Time.time;
         }
         text.text = "FPS:" + fps.ToString();
-
     }
 }

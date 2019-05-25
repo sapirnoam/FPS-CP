@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
     private float nextActionTime = 0.0f;
     public float Attackperiod = 2f;
 
-    void Update()
+    void FixedUpdate()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= AttackRadious)
@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
             {
                 nextActionTime = Time.unscaledTime + Attackperiod;
                 healthPlayer.health -= Damage;
-                if (healthPlayer.health <= 80)
+                if (healthPlayer.health <= 50)
                 {
                     BloodController.Play();
                 }

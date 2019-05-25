@@ -16,7 +16,7 @@ public class PunchMain : MonoBehaviour
     private bool IsPlaying = false;
     // Start is called before the first frame update
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {

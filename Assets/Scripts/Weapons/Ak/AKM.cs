@@ -44,7 +44,7 @@ public class AKM : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {

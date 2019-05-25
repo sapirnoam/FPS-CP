@@ -5,15 +5,16 @@ using GameJolt.UI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class LoadTest : MonoBehaviour {
-        public GameObject SignedInSuccess;
-        public GameObject SignInAsAguest;
-        public GameObject NoInternet;
-        public GameObject SignOut;
-        public GameObject LoginIn;
 
-        public Text UserName;
+    public GameObject SignedInSuccess;
+    public GameObject SignInAsAguest;
+    public GameObject NoInternet;
+    public GameObject SignOut;
+    public GameObject LoginIn;
+
+    public Text UserName;
     private void Start()
-        {
+    {
         LoginIn.SetActive(true);
         SignOut.SetActive(false);
         if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
@@ -22,22 +23,51 @@ public class LoadTest : MonoBehaviour {
             LoginIn.SetActive(true);
             SignOut.SetActive(false);
         }
-
         else // internet available
         {
-                GameJoltUI.Instance.ShowSignIn(success =>
-                {
-                    GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "!" : "");
-                    LoginIn.SetActive(false);
-                    SignOut.SetActive(true);
-                });
+            if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+            {
+                LoginIn.SetActive(false);
+                SignOut.SetActive(true);
+            }
 
+            if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+            {
+                return;
+            }
+            else
+            {
+                if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+                {
+                    return;
+                }
+                else
+                {
+                    GameJoltUI.Instance.ShowSignIn(success =>
+                {
+                    GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "." : "Closed the window");
+                    if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+                    {
+                        SignOut.SetActive(true);
+                        LoginIn.SetActive(false);
+                    }
+                });
+                }
+            }
         }
-        }
+    }
+
 
         public void LateUpdate()
         {
-        UserName.text = GameJoltAPI.Instance.CurrentUser.Name;
+            if (GameJoltAPI.Instance.HasUser)
+            {
+                UserName.text = GameJoltAPI.Instance.CurrentUser.Name;
+            }
+            else
+            {
+                UserName.text = "NOT CONNECTED";
+            }
         }
         public void PoflesSlayer()
         {
@@ -53,24 +83,34 @@ public class LoadTest : MonoBehaviour {
             SignInAsAguest.SetActive(true);
         }
 
-    public void SignOutButtonClicked()
-    {
-        GameJoltAPI.Instance.CurrentUser.SignOut();
-        UserName.text = "NOT CONNECTED";
-        LoginIn.SetActive(true);
-        SignOut.SetActive(false);
-    }
+        public void SignOutButtonClicked()
+        {
+            GameJoltAPI.Instance.CurrentUser.SignOut();
+            UserName.text = "NOT CONNECTED";
+            LoginIn.SetActive(true);
+            SignOut.SetActive(false);
+        }
 
-		public void IsSignedInButtonClicked() {
-			{
+        public void IsSignedInButtonClicked() {
+        if (GameJoltAPI.Instance.HasUser)
+        {
+            GameJoltAPI.Instance.CurrentUser.SignOut();
+            LoginIn.SetActive(true);
+            SignOut.SetActive(false);
+        }
+        else
+        {
             GameJoltUI.Instance.ShowSignIn(success =>
             {
                 GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "." : "Closed the window");
-                SignOut.SetActive(true);
-                LoginIn.SetActive(false);
+                if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+                {
+                    SignOut.SetActive(true);
+                    LoginIn.SetActive(false);
+                }
             });
-			}
-		}
+        }
+        }
         public void SignInAsGuest()
         {
             SceneManager.LoadScene(1);
@@ -84,8 +124,8 @@ public class LoadTest : MonoBehaviour {
         {
             GameJoltUI.Instance.ShowLeaderboards();
         }
-    public void Exit()
-    {
-        Application.Quit();
-    }
-	}
+        public void Exit()
+        {
+            Application.Quit();
+        }
+}

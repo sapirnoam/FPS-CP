@@ -16,7 +16,7 @@ public class CrossHairManager : MonoBehaviour
         Hit = false;
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Hit == true)
         {

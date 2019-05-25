@@ -10,7 +10,7 @@ public class CloseAfterXseconds : MonoBehaviour
         StartCoroutine(Close());
     }
 
-    public void Update()
+    public void LateUpdate()
     {
         if(Input.GetKey("escape"))
         {

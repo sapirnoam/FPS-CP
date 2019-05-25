@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 namespace GameJolt.UI.Controllers {
 	public class ScoreItem : MonoBehaviour {
-		public Text Username;
+        public Text Rank;
+        public Text Username;
 		public Text Value;
 
-		public Color DefaultColour = Color.white;
+        int scoreValue = 100;
+        int tableID = 0;
+        public Color DefaultColour = Color.white;
 		public Color HighlightColour = Color.green;
-
 		public void Init(Score score) {
-			Username.text = score.PlayerName;
-			Value.text = score.Text;
+            Value.text = score.Text;
+            Username.text = score.PlayerName;
+            GameJolt.API.Scores.GetRank(10, 420719, (int rank) => {
+                Rank.text = "#" + rank;
+            });
 
 			bool isUserScore = score.UserID != 0 && GameJoltAPI.Instance.HasUser &&
 			                   GameJoltAPI.Instance.CurrentUser.ID == score.UserID;
-			Username.color = isUserScore ? HighlightColour : DefaultColour;
+            Rank.color = isUserScore ? HighlightColour : DefaultColour;
+            Username.color = isUserScore ? HighlightColour : DefaultColour;
 			Value.color = isUserScore ? HighlightColour : DefaultColour;
 		}
 	}

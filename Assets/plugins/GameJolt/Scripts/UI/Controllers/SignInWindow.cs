@@ -1,6 +1,9 @@
 ﻿using UnityEngine.UI;
 using System;
 using UnityEngine;
+using GameJolt;
+using GameJolt.API;
+using GameJolt.UI;
 
 namespace GameJolt.UI.Controllers {
 	public class SignInWindow : BaseWindow {
@@ -37,38 +40,47 @@ namespace GameJolt.UI.Controllers {
 			}
 		}
 
-		public void Submit() {
-			ErrorMessage.enabled = false;
+        public void Submit()
+        {
+            ErrorMessage.enabled = false;
 
-			if(UsernameField.text.Trim() == string.Empty || TokenField.text.Trim() == string.Empty) {
-				ErrorMessage.text = "Empty username and/or token.";
-				ErrorMessage.enabled = true;
-			} else {
-				Animator.SetTrigger("Lock");
-				Animator.SetTrigger("ShowLoadingIndicator");
+                if (UsernameField.text.Trim() == string.Empty || TokenField.text.Trim() == string.Empty)
+                {
+                    ErrorMessage.text = "Empty username and/or token.";
+                    ErrorMessage.enabled = true;
+                }
+                else
+                {
+                    Animator.SetTrigger("Lock");
+                    Animator.SetTrigger("ShowLoadingIndicator");
 
-				var user = new API.Objects.User(UsernameField.text.Trim(), TokenField.text.Trim());
-				user.SignIn(signInSuccess => {
-					if(signInSuccess) {
-						Dismiss(true);
-					} else {
-						// Technically this could be because of another user being already signed in.
-						ErrorMessage.text = "Wrong username and/or token.";
-						ErrorMessage.enabled = true;
-					}
+                    var user = new API.Objects.User(UsernameField.text.Trim(), TokenField.text.Trim());
+                    user.SignIn(signInSuccess =>
+                    {
+                        if (signInSuccess)
+                        {
+                            Dismiss(true);
+                        }
+                        else
+                        {
+                            // Technically this could be because of another user being already signed in.
+                            ErrorMessage.text = "Wrong username and/or token. If you already connected, click close.";
+                            ErrorMessage.enabled = true;
+                        }
 
-					Animator.SetTrigger("HideLoadingIndicator");
-					Animator.SetTrigger("Unlock");
-				}, userFetchedSuccess => {
-					if(userFetchedCallback != null) {
-						// This will potentially be called after a user dismissed the window..
-						userFetchedCallback(userFetchedSuccess);
-						userFetchedCallback = null;
-					}
-				}, RememberMeToggle.isOn);
-			}
-		}
-
+                        Animator.SetTrigger("HideLoadingIndicator");
+                        Animator.SetTrigger("Unlock");
+                    }, userFetchedSuccess =>
+                    {
+                        if (userFetchedCallback != null)
+                        {
+                            // This will potentially be called after a user dismissed the window..
+                            userFetchedCallback(userFetchedSuccess);
+                            userFetchedCallback = null;
+                        }
+                    }, RememberMeToggle.isOn);
+                }
+        }
 		public void ShowToken(bool show) {
 			TokenField.contentType = show ? InputField.ContentType.Standard : InputField.ContentType.Password;
 			TokenField.ActivateInputField();

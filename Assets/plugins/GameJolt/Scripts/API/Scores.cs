@@ -12,14 +12,19 @@ namespace GameJolt.API {
 		/// </summary>
 		private static Table[] cachedTables;
 
-		#region Add
-		/// <summary>
-		/// Add a <see cref="Score"/>.
-		/// </summary>
-		/// <param name="score">The <see cref="Score"/> to add.</param>
-		/// <param name="table">The ID of the HighScore <see cref="Table"/>. Defaults to 0 (i.e. Primary Table).</param>
-		/// <param name="callback">A callback function accepting a single parameter, a boolean indicating success.</param>
-		public static void Add(Score score, int table = 0, Action<bool> callback = null) {
+        internal static string GetRank()
+        {
+            throw new NotImplementedException();
+        }
+
+        #region Add
+        /// <summary>
+        /// Add a <see cref="Score"/>.
+        /// </summary>
+        /// <param name="score">The <see cref="Score"/> to add.</param>
+        /// <param name="table">The ID of the HighScore <see cref="Table"/>. Defaults to 0 (i.e. Primary Table).</param>
+        /// <param name="callback">A callback function accepting a single parameter, a boolean indicating success.</param>
+        public static void Add(Score score, int table = 0, Action<bool> callback = null) {
 			Add(score.Value, score.Text, score.GuestName, table, score.Extra, callback);
 		}
 

@@ -15,7 +15,7 @@ public class GunMovement : MonoBehaviour
         WeaponThis.GetComponent<Transform>();
     }
 
-    public void LateUpdate()
+    public void Update()
     {
         if (WeaponThis.IsChildOf(WeaponsHolder))
         {

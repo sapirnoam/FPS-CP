@@ -17,7 +17,7 @@ public class SpawnerEnemy : MonoBehaviour
         Player = PlayerManager.instance.player.transform;
     }
 
-    void Update()
+    void LateUpdate()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= GizmoSize)
