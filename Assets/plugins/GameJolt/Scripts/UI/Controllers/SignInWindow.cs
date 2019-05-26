@@ -64,7 +64,7 @@ namespace GameJolt.UI.Controllers {
                         else
                         {
                             // Technically this could be because of another user being already signed in.
-                            ErrorMessage.text = "Wrong username and/or token. If you already connected, click close.";
+                            ErrorMessage.text = "Wrong username and/or token.";
                             ErrorMessage.enabled = true;
                         }
 

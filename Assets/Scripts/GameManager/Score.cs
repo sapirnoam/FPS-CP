@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     [SerializeField]
     public float score = 0; // Made in match //V //Should seen in scoreboard
     public float HighScore = 0;
+    public float TotalKills = 0;
 
     public int WavesSurvived = 0; // Made in match //V //Should seen in scoreboard
     public int Kills = 0; //Should seen in scoreboard
@@ -47,26 +48,34 @@ public class Score : MonoBehaviour
                     return;
             });
         }
-
-
+        TotalKills = PlayerPrefs.GetFloat("Score");
+        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+        {
+            GameJolt.API.DataStore.Get("TotalKills", true, (string value) => {
+                if (float.Parse(value) > TotalKills)
+                {
+                    TotalKills = float.Parse(value);
+                }
+                else
+                    return;
+            });
+        }
     }
-    string scoreTextscore = "Score:"; // A string representing the score to be shown on the website.
-    string scoreTextKill = "Kills:"; // A string representing the score to be shown on the website.
+    string scoreTextscore = "KillPoints: "; // A string representing the score to be shown on the website.
+    string scoreTextKill = "Kills: "; // A string representing the score to be shown on the website.
     string scoreTextWaves = "Waves Surveved:"; // A string representing the score to be shown on the website.
     int tableID = 0; // Set it to 0 for main highscore table.
 
     public void Dead()
     {
         panelDeath.SetActive(true);
+        TotalKills += Kills;
         gm.CursorLock = false;
-        GameJolt.API.Scores.Add((int)score, scoreTextscore, 420719, "Score", (bool success) => {
+        GameJolt.API.Scores.Add((int)score, scoreTextscore + (int)score, 420719, "", (bool success) => {
             Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
         });
-        GameJolt.API.Scores.Add((int)Kills, scoreTextKill, 421871, "Kills", (bool success) => {
-            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
-        });
-        GameJolt.API.Scores.Add((int)WavesSurvived, scoreTextWaves, 422057, "Waves", (bool success) => {
-            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
+        GameJolt.API.Scores.Add((int)Kills, scoreTextKill + (int)Kills, 421871, "Kills", (bool success) => {
+            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : ""));
         });
         if (score > HighScore)
         {
@@ -74,9 +83,13 @@ public class Score : MonoBehaviour
             PlayerPrefs.SetFloat("Score", HighScore);
             PlayerPrefs.Save();
             GameJolt.API.DataStore.Set("HighScore", HighScore.ToString(), true, (bool success) => {
-                Debug.Log("Saved Online");
             });
         }
+            PlayerPrefs.SetFloat("Score", TotalKills);
+            PlayerPrefs.Save();
+            GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
+                Debug.Log("Saved Online");
+            });
     }
     bool isGlobal = false;
     private void LateUpdate()
@@ -102,5 +115,9 @@ public class Score : MonoBehaviour
         scoreText.text = "KillPoints: " + score.ToString();
         GameCoinsText.text = GameCoins.ToString() + "$";
         WavesSurvivedText.text = "Waves Survived: " + WavesSurvived.ToString();
+    }
+    private void FieldCheatDetector_OnFieldCheatDetected()
+    {
+        Debug.Log("");
     }
 }
