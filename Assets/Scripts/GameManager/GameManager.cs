@@ -6,13 +6,14 @@ public class GameManager : MonoBehaviour
     {
         public bool CursorLock;
         private bool IsLocked;
-    public bool IsDead = false;
+        public bool IsDead = false;
+        public int FpsTarget = 150;
         // Start is called before the first frame update
         void Start()
         {
             CursorLock = true;
-        Application.targetFrameRate = 60;
-    }
+        Application.targetFrameRate = FpsTarget;
+        }
 
         // Update is called once per frame
         void LateUpdate()

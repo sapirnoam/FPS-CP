@@ -18,7 +18,6 @@ public class AKM : MonoBehaviour
     public GameObject ammoTextActive;
     public GameObject ReloadImage;
     public AudioClip Reload;
-    public AudioClip Fire;
     public AudioSource audioSource;
     public Animator animator;
     public AudioClip[] shootSounds;
@@ -91,7 +90,7 @@ public class AKM : MonoBehaviour
         }
 
     }
-
+    public int DieHard = 0;
 void Shoot()
     {
         //Effect:
@@ -110,6 +109,16 @@ void Shoot()
             if (target != null)
             {
                 target.TakeDamage(damage);
+                if (target.health <= 0.9)
+                {
+                    DieHard = Random.Range(0, 10);
+                    if (DieHard == 10)
+                    {
+                        target.DieHard();
+                    }
+                    else
+                        return;
+                }
             }
 
             if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))

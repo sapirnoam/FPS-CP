@@ -31,6 +31,10 @@ public class Score : MonoBehaviour
     public Text KillsTextDead;
     public Text PlatinumEarned;
 
+
+    public AudioSource AudioS;
+    public AudioClip WhatHappend;
+
     public bool IsDead = false;
 
     // Start is called before the first frame update
@@ -66,8 +70,19 @@ public class Score : MonoBehaviour
     string scoreTextWaves = "Waves Surveved:"; // A string representing the score to be shown on the website.
     int tableID = 0; // Set it to 0 for main highscore table.
 
+
+    GameObject[] Enemys;
+    GameObject[] MapObjects;
     public void Dead()
     {
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        for (var i = 0; i < Enemys.Length; i++)
+            Destroy(Enemys[i]);
+        MapObjects = GameObject.FindGameObjectsWithTag("MapObjects");
+        for (var i = 0; i < MapObjects.Length; i++)
+            Destroy(MapObjects[i]);
+
+
         panelDeath.SetActive(true);
         TotalKills += Kills;
         gm.CursorLock = false;
@@ -108,6 +123,7 @@ public class Score : MonoBehaviour
     public IEnumerator WaitBeforeDeadvoid()
     {
         yield return new WaitForSeconds(3.2f);
+        AudioS.PlayOneShot(WhatHappend);
         Dead();
     }
     void FixedUpdate()

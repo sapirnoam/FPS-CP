@@ -13,6 +13,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausemenuUI;
     public GameManager gm;
     public AudioSource audiosource;
+    private void Start()
+    {
+        AudioListener.volume = 1;
+    }
     void LateUpdate()
     {
         if (Input.GetButtonDown("Settings")) //Esc key
@@ -56,7 +60,6 @@ public class PauseMenu : MonoBehaviour
     public void OpenOptions()
     {
         Debug.Log("Options.");
-
     }
 
 
@@ -69,9 +72,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResetGame()
     {
-        Time.timeScale = 1f;
         AudioListener.volume = 1;
-        Application.LoadLevel(Application.loadedLevel);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
     public void MainMenu()
     {

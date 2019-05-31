@@ -1,0 +1,31 @@
+{
+  "intent":"sale",
+  "redirect_urls":{
+    "return_url":"http://www.noam3d.com/order-complete",
+    "cancel_url":"http://www.noam3d.com/order-canceled"
+  },
+  "payer":{
+    "payment_method":"paypal"
+  },
+  "transactions":[
+    {
+      "amount":{
+        "total":"",
+        "currency":""
+      },
+      "description": "",
+      "invoice_number": "",
+      "item_list": {
+        "items": [
+          {
+            "name": "",
+            "description": "",
+            "quantity": "1",
+            "price": "",
+            "currency":""
+          }
+        ]
+      }
+    }
+  ]
+}

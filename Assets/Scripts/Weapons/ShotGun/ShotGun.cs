@@ -105,7 +105,7 @@ public class ShotGun : MonoBehaviour
             crosshair.SetActive(false);
         }
     }
-
+    private int DieHard = 0;
     void Shoot()
     {
         muzzleFlash.Play();
@@ -121,6 +121,18 @@ public class ShotGun : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
+                if (target.health <= 0.9)
+                {
+                    DieHard = Random.Range(0, 2);
+                    if (DieHard == 0)
+                    {
+                        return;
+                    }
+                    else if (DieHard == 1)
+                    {
+                        target.DieHard();
+                    }
+                }
             }
             if (hit.transform.tag != "Barrier" && hit.transform.tag != "MusicZone")
             {

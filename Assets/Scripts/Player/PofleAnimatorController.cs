@@ -41,6 +41,7 @@ public class PofleAnimatorController : MonoBehaviour
 
     public GameObject DeathCamera;
     public GameObject mainCamera;
+    GameObject[] Weapons;
     public IEnumerator Die()
     {
         IsDead = true;
@@ -49,11 +50,17 @@ public class PofleAnimatorController : MonoBehaviour
         Instantiate(effectBlood, effecttransform.position, effecttransform.rotation);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         yield return new WaitForSeconds(0.2f);
+
+        Weapons = GameObject.FindGameObjectsWithTag("Weapon");
+
+        for (var i = 0; i < Weapons.Length; i++)
+            Destroy(Weapons[i]);
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < 300)
+            if (distance < 100)
             {
                 target.GetComponent<Enemy>().DieWithOutGive();
             }

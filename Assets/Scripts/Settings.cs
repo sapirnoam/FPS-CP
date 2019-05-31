@@ -25,11 +25,8 @@ public class Settings : MonoBehaviour
         resulotionInt = PlayerPrefs.GetInt("Resolution");
         QualityInt = PlayerPrefs.GetInt("SetQuality");
 
-
-
-
-
         resolutions = Screen.resolutions;
+
 
         resolutionsDropDown.ClearOptions();
         List<string> options = new List<string>();

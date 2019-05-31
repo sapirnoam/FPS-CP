@@ -78,6 +78,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0f)
         {
             AudioS.PlayOneShot(Death[Random.Range(0, Death.Length)]);
+            AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
             Die();
         }
     }
@@ -128,6 +129,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Death to the Enemy
+    public GameObject Explodedversion;
     void Die()
     {
         Destroy(gameObject);
@@ -135,7 +137,12 @@ public class Enemy : MonoBehaviour
         scoreScript.Kills += 1;
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
-        AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
+    }
+
+    public void DieHard()
+    {
+        Instantiate(Explodedversion, transform.position, transform.rotation);
+        Die();
     }
     public void DieWithOutGive()
     {
