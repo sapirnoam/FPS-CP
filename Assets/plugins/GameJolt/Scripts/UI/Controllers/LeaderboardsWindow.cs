@@ -6,6 +6,7 @@ using GameJolt.API;
 using GameJolt.API.Objects;
 
 namespace GameJolt.UI.Controllers {
+
 	public class LeaderboardsWindow : BaseWindow {
 		public RectTransform TabsContainer;
 		public GameObject TableButton;
@@ -18,7 +19,7 @@ namespace GameJolt.UI.Controllers {
 		private int[] tableIDs;
 		private int currentTab;
 
-		public override void Show(Action<bool> callback) {
+        public override void Show(Action<bool> callback) {
 			Show(callback, null, null);
 		}
 
@@ -88,7 +89,7 @@ namespace GameJolt.UI.Controllers {
 			SetScores(tableIDs[currentTab]);
 		}
 
-		private void SetScores(int tableId) {
+		public void SetScores(int tableId) {
 			Scores.Get(scores => {
 				if(scores != null) {
 					ScoresScrollRect.verticalNormalizedPosition = 0;
@@ -110,5 +111,5 @@ namespace GameJolt.UI.Controllers {
 				}
 			}, tableId, 50);
 		}
-	}
+    }
 }

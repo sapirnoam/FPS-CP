@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Reflection;
+
 public class PofleAnimatorController : MonoBehaviour
 {
     public Animator anim;
@@ -44,18 +46,15 @@ public class PofleAnimatorController : MonoBehaviour
     GameObject[] Weapons;
     public IEnumerator Die()
     {
+        Weapons = GameObject.FindGameObjectsWithTag("Weapon");
+        for (var i = 0; i < Weapons.Length; i++)
+            Destroy(Weapons[i]);
         IsDead = true;
         mainCamera.SetActive(false);
         DeathCamera.SetActive(true);
         Instantiate(effectBlood, effecttransform.position, effecttransform.rotation);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         yield return new WaitForSeconds(0.2f);
-
-        Weapons = GameObject.FindGameObjectsWithTag("Weapon");
-
-        for (var i = 0; i < Weapons.Length; i++)
-            Destroy(Weapons[i]);
-
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject target in enemies)
         {

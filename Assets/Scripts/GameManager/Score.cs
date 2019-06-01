@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameJolt.API;
 using GameJolt.UI;
+using GameJolt.UI.Controllers;
 public class Score : MonoBehaviour
 {
     [SerializeField]
@@ -41,7 +42,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         HighScore = PlayerPrefs.GetFloat("Score");
-        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+        if (GameJoltAPI.Instance.HasUser || GameJoltAPI.Instance.HasSignedInUser)
         {
             GameJolt.API.DataStore.Get("HighScore", true, (string value) => {
                 if (float.Parse(value) > HighScore)
@@ -53,7 +54,7 @@ public class Score : MonoBehaviour
             });
         }
         TotalKills = PlayerPrefs.GetFloat("Score");
-        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+        if (GameJoltAPI.Instance.HasUser || GameJoltAPI.Instance.HasSignedInUser)
         {
             GameJolt.API.DataStore.Get("TotalKills", true, (string value) => {
                 if (float.Parse(value) > TotalKills)
@@ -73,6 +74,7 @@ public class Score : MonoBehaviour
 
     GameObject[] Enemys;
     GameObject[] MapObjects;
+    public LeaderboardsWindow LeaderWindow;
     public void Dead()
     {
         Enemys = GameObject.FindGameObjectsWithTag("Enemy");
@@ -81,7 +83,6 @@ public class Score : MonoBehaviour
         MapObjects = GameObject.FindGameObjectsWithTag("MapObjects");
         for (var i = 0; i < MapObjects.Length; i++)
             Destroy(MapObjects[i]);
-
 
         panelDeath.SetActive(true);
         TotalKills += Kills;
@@ -105,16 +106,17 @@ public class Score : MonoBehaviour
             GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
                 Debug.Log("Saved Online");
             });
+        LeaderWindow.SetScores(0);
     }
     bool isGlobal = false;
     private void LateUpdate()
     {
-        ScoreTextDead.text = "Score: " + score.ToString();
-        BestScore.text = "Best Score: " + HighScore.ToString();
+        ScoreTextDead.text = score.ToString();
+        BestScore.text = HighScore.ToString();
 
-        WavesSurvivedTextDead.text = "Survived until wave: " + WavesSurvived.ToString();
-        KillsTextDead.text = "Kills: " + Kills.ToString();
-        PlatinumEarned.text = "Platinum collected: " + Platinum.ToString();
+        WavesSurvivedTextDead.text = WavesSurvived.ToString();
+        KillsTextDead.text = Kills.ToString();
+        PlatinumEarned.text = Platinum.ToString();
     }
     public void PofleAnimator()
     {

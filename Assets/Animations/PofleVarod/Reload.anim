@@ -536,7 +536,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0166667
+  - time: 1.25
     functionName: ReloadAnimation
     data: 
     objectReferenceParameter: {fileID: 0}

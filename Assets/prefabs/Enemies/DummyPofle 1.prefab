@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26dd8a4ddcf7084ca924bc31b3365c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 50.18
+  lookRadius: 50
   lookRadiusLock: 85
   movementSpeed: 4
   LockedOnTarget: 0
@@ -255,7 +255,6 @@ MonoBehaviour:
   Angry:
   - {fileID: 8300000, guid: 8e0d38b097a16354d9a66854cf6c1782, type: 3}
   - {fileID: 8300000, guid: e1a44c096a4288a4bbd8430fe1d4935d, type: 3}
-  - {fileID: 8300000, guid: 855783b2d1f60e54aa76d59b9eca9700, type: 3}
 --- !u!1 &129524626822911044
 GameObject:
   m_ObjectHideFlags: 0

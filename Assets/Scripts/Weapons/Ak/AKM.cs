@@ -29,7 +29,7 @@ public class AKM : MonoBehaviour
 
     private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
-    public float AllowReload = 1.30f;
+    public float AllowReload = 2.25f;
 
     public Transform WeaponParent;
     public Transform WeaponsHolder;
@@ -111,8 +111,8 @@ void Shoot()
                 target.TakeDamage(damage);
                 if (target.health <= 0.9)
                 {
-                    DieHard = Random.Range(0, 10);
-                    if (DieHard == 10)
+                    DieHard = Random.Range(0, 3);
+                    if (DieHard == 2)
                     {
                         target.DieHard();
                     }

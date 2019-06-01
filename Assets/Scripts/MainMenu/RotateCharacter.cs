@@ -5,15 +5,16 @@ using UnityEngine;
 public class RotateCharacter : MonoBehaviour
 {
      
-     private float _sensitivity;
+     public float Sensitivity;
     private Vector3 _mouseReference;
     private Vector3 _mouseOffset;
     private Vector3 _rotation;
     private bool _isRotating;
+    private float _sensitivity = 0.4f;
 
     void Start()
     {
-        _sensitivity = 0.4f;
+        _sensitivity = Sensitivity;
         _rotation = Vector3.zero;
     }
 
@@ -25,7 +26,7 @@ public class RotateCharacter : MonoBehaviour
             _mouseOffset = (Input.mousePosition - _mouseReference);
 
             // apply rotation
-            _rotation.y = -(_mouseOffset.x + _mouseOffset.y) * _sensitivity;
+            _rotation.y = -(_mouseOffset.x + _mouseOffset.y) * Sensitivity;
 
             // rotate
             transform.Rotate(_rotation);
