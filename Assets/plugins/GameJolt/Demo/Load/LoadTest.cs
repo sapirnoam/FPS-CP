@@ -11,7 +11,6 @@ public class LoadTest : MonoBehaviour {
     public GameObject NoInternet;
     public GameObject SignOut;
     public GameObject LoginIn;
-
     public Text UserName;
     private void Start()
     {
@@ -62,7 +61,7 @@ public class LoadTest : MonoBehaviour {
         {
             if (GameJoltAPI.Instance.HasUser)
             {
-                UserName.text = GameJoltAPI.Instance.CurrentUser.Name;
+            UserName.text = GameJoltAPI.Instance.CurrentUser.Name;
             }
             else
             {
