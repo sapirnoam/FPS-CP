@@ -59,7 +59,7 @@ public class ShotGun : MonoBehaviour
             Shell.SetActive(true);
             crosshair.SetActive(true);
 
-            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.2) //Mouse
             {
                 for (int i = 0; i < amountOfProjectiles; i++)
                 {
