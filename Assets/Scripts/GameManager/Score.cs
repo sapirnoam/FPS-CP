@@ -106,7 +106,15 @@ public class Score : MonoBehaviour
             GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
                 Debug.Log("Saved Online");
             });
+        StartCoroutine(LeaderLoad());
+    }
+    public GameObject LoadingScores;
+    IEnumerator LeaderLoad()
+    {
+        LoadingScores.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
         LeaderWindow.SetScores(0);
+        LoadingScores.SetActive(false);
     }
     bool isGlobal = false;
     private void LateUpdate()
