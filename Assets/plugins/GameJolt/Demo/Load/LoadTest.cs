@@ -12,8 +12,15 @@ public class LoadTest : MonoBehaviour {
     public GameObject SignOut;
     public GameObject LoginIn;
     public Text UserName;
+    public string GameVersion;
+    public Text Ver;
     private void Start()
     {
+        GameVersion = PlayerPrefs.GetString("Version");
+
+        StartCoroutine(GetGameVersionFromSite());
+        YourVersionText.text = "Your Game version:" + Application.version.ToString();
+        Ver.text = "Game Version: " + GameVersion;
         LoginIn.SetActive(true);
         SignOut.SetActive(false);
         if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
@@ -55,9 +62,40 @@ public class LoadTest : MonoBehaviour {
             }
         }
     }
+    public GameObject Outofdate;
 
+    public string VersionWebUrl = "https://www.noam3d.com/PofleGameVersion/";
+    public GameObject ReloginToGame;
+    IEnumerator GetGameVersionFromSite()
+    {
+        using (WWW www = new WWW(VersionWebUrl))
+        {
+            yield return www;
+            if (www.text == Application.version)
+            {
+                Debug.Log("Up to date");
+                PlayerPrefs.SetString("Version", www.text);
+                PlayerPrefs.Save();
+            }
+            else if (NoInternet == true && GameVersion == Application.version)
+            {
+                Outofdate.SetActive(false);
+                StartCoroutine(NoConnection());
+                SignOut.SetActive(false);
+                LoginIn.SetActive(false);
+                ReloginToGame.SetActive(true);
+            }
+            else
+            {
+                Outofdate.SetActive(true);
+                VersionToUpdate.text = "Version required to play: " + www.text.ToString();
+            }
+        }
+    }
+    public Text YourVersionText;
+    public Text VersionToUpdate;
 
-        public void LateUpdate()
+    public void LateUpdate()
         {
             if (GameJoltAPI.Instance.HasUser)
             {
@@ -127,4 +165,8 @@ public class LoadTest : MonoBehaviour {
         {
             Application.Quit();
         }
+    public void OpenGameJoltPage()
+    {
+        Application.OpenURL("https://gamejolt.com/games/PofleGame/414330");
+    }
 }

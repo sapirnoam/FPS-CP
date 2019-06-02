@@ -11,7 +11,7 @@ namespace GameJolt.UI.Controllers {
 			Text.text = notification.Text;
 
 			if(notification.Image != null) {
-				Image.sprite = notification.Image;
+				//Image.sprite = notification.Image;
 				Image.enabled = true;
 			} else {
 				Image.enabled = false;
