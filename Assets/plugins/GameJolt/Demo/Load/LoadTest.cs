@@ -14,6 +14,8 @@ public class LoadTest : MonoBehaviour {
     public Text UserName;
     public string GameVersion;
     public Text Ver;
+    public Animator NewsAnim;
+    public GameObject News;
     private void Start()
     {
         GameVersion = PlayerPrefs.GetString("Version");
@@ -23,6 +25,7 @@ public class LoadTest : MonoBehaviour {
         Ver.text = "Game Version: " + GameVersion;
         LoginIn.SetActive(true);
         SignOut.SetActive(false);
+        News.SetActive(false);
         if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
         {
             StartCoroutine(NoConnection());
@@ -35,6 +38,8 @@ public class LoadTest : MonoBehaviour {
             {
                 LoginIn.SetActive(false);
                 SignOut.SetActive(true);
+                News.SetActive(true);
+                NewsAnim.SetTrigger("Logged");
             }
 
             if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
@@ -56,6 +61,9 @@ public class LoadTest : MonoBehaviour {
                     {
                         SignOut.SetActive(true);
                         LoginIn.SetActive(false);
+                        News.SetActive(true);
+                        NewsAnim.SetTrigger("Logged");
+
                     }
                 });
                 }
@@ -84,6 +92,12 @@ public class LoadTest : MonoBehaviour {
                 SignOut.SetActive(false);
                 LoginIn.SetActive(false);
                 ReloginToGame.SetActive(true);
+            }
+            else if (www.text == "ALPHA")
+            {
+                Debug.Log("Up to date");
+                PlayerPrefs.SetString("Version", www.text);
+                PlayerPrefs.Save();
             }
             else
             {
