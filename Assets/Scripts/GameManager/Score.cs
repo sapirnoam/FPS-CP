@@ -85,6 +85,7 @@ public class Score : MonoBehaviour
             Destroy(MapObjects[i]);
 
         panelDeath.SetActive(true);
+        PlayerPrefs.SetInt("ScoreToAddXP", (int)score);
         TotalKills += Kills;
         gm.CursorLock = false;
         GameJolt.API.Scores.Add((int)score, scoreTextscore + (int)score, 420719, "", (bool success) => {
@@ -101,7 +102,7 @@ public class Score : MonoBehaviour
             GameJolt.API.DataStore.Set("HighScore", HighScore.ToString(), true, (bool success) => {
             });
         }
-            PlayerPrefs.SetFloat("Score", TotalKills);
+        PlayerPrefs.SetFloat("Score", TotalKills);
             PlayerPrefs.Save();
             GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
                 Debug.Log("Saved Online");

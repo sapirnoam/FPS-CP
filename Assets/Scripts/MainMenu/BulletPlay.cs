@@ -25,6 +25,7 @@ public class BulletPlay : MonoBehaviour
     }
     IEnumerator PoflesSlayerPlay()
     {
+        PlayerPrefs.SetInt("BackedFromGame", 1);
         anim.SetTrigger("PlaySlayer");
         playPanel.SetActive(true);
         audioS.PlayOneShot(ShotAudioClip);

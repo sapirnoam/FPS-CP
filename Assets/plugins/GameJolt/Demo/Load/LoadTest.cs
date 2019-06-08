@@ -16,9 +16,20 @@ public class LoadTest : MonoBehaviour {
     public Text Ver;
     public Animator NewsAnim;
     public GameObject News;
+    private bool NEWSshowd = true;
     private void Start()
     {
         GameVersion = PlayerPrefs.GetString("Version");
+        PlayerPrefs.SetInt("NewsShowed", 1);
+        PlayerPrefs.Save();
+        if (PlayerPrefs.GetInt("NewsShowed") == 1)
+        {
+            NEWSshowd = true;
+        }
+        else
+        {
+            NEWSshowd = false;
+        }
 
         StartCoroutine(GetGameVersionFromSite());
         YourVersionText.text = "Your Game version:" + Application.version.ToString();
@@ -38,7 +49,10 @@ public class LoadTest : MonoBehaviour {
             {
                 LoginIn.SetActive(false);
                 SignOut.SetActive(true);
-                News.SetActive(true);
+                if (NEWSshowd == false)
+                {
+                    News.SetActive(true);
+                }
                 NewsAnim.SetTrigger("Logged");
             }
 
@@ -61,7 +75,10 @@ public class LoadTest : MonoBehaviour {
                     {
                         SignOut.SetActive(true);
                         LoginIn.SetActive(false);
-                        News.SetActive(true);
+                        if (NEWSshowd == false)
+                        {
+                            News.SetActive(true);
+                        }
                         NewsAnim.SetTrigger("Logged");
 
                     }
@@ -182,5 +199,11 @@ public class LoadTest : MonoBehaviour {
     public void OpenGameJoltPage()
     {
         Application.OpenURL("https://gamejolt.com/games/PofleGame/414330");
+    }
+    private void OnApplicationQuit()
+    {
+        NEWSshowd = false;
+        PlayerPrefs.SetInt("NewsShowed", 0);
+        PlayerPrefs.Save();
     }
 }

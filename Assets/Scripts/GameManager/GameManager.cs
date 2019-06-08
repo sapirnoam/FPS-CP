@@ -29,4 +29,9 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
         }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("NewsShowed", 0);
+        PlayerPrefs.SetInt("BackedFromGame", 0);
+    }
 }
