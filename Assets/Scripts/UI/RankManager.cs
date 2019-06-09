@@ -101,6 +101,10 @@ public class RankManager : MonoBehaviour
         {
             XP = float.Parse(value);
         });
+        GameJolt.API.DataStore.Get("Rank", false, (string value) =>
+        {
+            Rank = int.Parse(value);
+        });
         yield return new WaitForSeconds(1.5f);
         //Loading gameobject
         ScoreToAddToXp = PlayerPrefs.GetInt("ScoreToAddXP"); // Dont remove
