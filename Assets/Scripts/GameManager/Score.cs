@@ -38,8 +38,6 @@ public class Score : MonoBehaviour
 
     public bool IsDead = false;
 
-    public GameObject Saving;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +53,7 @@ public class Score : MonoBehaviour
                     return;
             });
         }
+        TotalKills = PlayerPrefs.GetFloat("Score");
         if (GameJoltAPI.Instance.HasUser || GameJoltAPI.Instance.HasSignedInUser)
         {
             GameJolt.API.DataStore.Get("TotalKills", true, (string value) => {
@@ -86,7 +85,6 @@ public class Score : MonoBehaviour
             Destroy(MapObjects[i]);
 
         panelDeath.SetActive(true);
-        Saving.SetActive(true);
         PlayerPrefs.SetInt("ScoreToAddXP", (int)score);
         TotalKills += Kills;
         gm.CursorLock = false;
@@ -109,14 +107,13 @@ public class Score : MonoBehaviour
             GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
                 Debug.Log("Saved Online");
             });
-        Saving.SetActive(false);
         StartCoroutine(LeaderLoad());
     }
     public GameObject LoadingScores;
     IEnumerator LeaderLoad()
     {
         LoadingScores.SetActive(true);
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.0f);
         LeaderWindow.SetScores(0);
         LoadingScores.SetActive(false);
     }
@@ -149,9 +146,5 @@ public class Score : MonoBehaviour
     private void FieldCheatDetector_OnFieldCheatDetected()
     {
         Debug.Log("");
-    }
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("BackedFromGame", 0);
     }
 }

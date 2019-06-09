@@ -12,15 +12,14 @@ public class ResetPlayer : MonoBehaviour
     {
         //GameJolt.API.DataStore.Delete("TotalKills", true); //Values to reset player progress (Story when will be added..)
         //GameJolt.API.DataStore.Delete("HighScore", true);
-        GameJolt.API.DataStore.Delete("Rank", false, (bool success) => { Debug.Log("Reseted"); });
-        GameJolt.API.DataStore.Delete("XP", false, (bool success) => { Debug.Log("Reseted"); });
-        GameJolt.API.DataStore.Delete("XPtonextRank", false, (bool success) => { Debug.Log("Reseted"); });
+        GameJolt.API.DataStore.Delete("Rank", false);
+        GameJolt.API.DataStore.Delete("XP", false);
+        GameJolt.API.DataStore.Delete("XPtonextRank", false);
+        GameJoltAPI.Instance.CurrentUser.SignOut();
 
         PlayerPrefs.DeleteAll();
-
-        GameJoltAPI.Instance.CurrentUser.SignOut();
-        Application.Quit();
         Debug.Log("All reseted.");
+        Application.Quit();
     }
-
+  
 }
