@@ -16,8 +16,6 @@ public class RankManager : MonoBehaviour
 
     public int BackedFromGame = 0; //If the player came back from game write xp and stuff, If not, Dont write.
 
-
-    public GameObject Loading;
     private void Start()
     {
         BackedFromGame = PlayerPrefs.GetInt("BackedFromGame");
@@ -28,28 +26,19 @@ public class RankManager : MonoBehaviour
             {
                 GameJolt.API.DataStore.Get("Rank", false, (string value) =>
                 {
-                    if (value != null)
-                    {
-                        Rank = int.Parse(value);
-                    }
+                    Rank = int.Parse(value);
                 });
-                DataStore.Get("XP", false, value => {
-                    if (value != null)
-                    {
-                        XP = float.Parse(value);
-                    }
+                GameJolt.API.DataStore.Get("XP", false, (string value) =>
+                {
+                    XP = float.Parse(value);
                 });
                 GameJolt.API.DataStore.Get("XPtonextRank", false, (string value) =>
                 {
-                    if (value != null)
-                    {
-                        XPtonextRank = int.Parse(value);
-                    }
+                    XPtonextRank = int.Parse(value);
                 });
                 StartCoroutine(AddXP());
             }
-            else
-            {
+            else {
                 return;
             }
         }
@@ -59,17 +48,14 @@ public class RankManager : MonoBehaviour
     {
         if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
         {
-            if (XP >= XPtonextRank && canrankup == true)
+            if (XP >= XPtonextRank)
             {
-                if (canrankup == true)
-                {
-                    Rank++;
-                    XP -= XPtonextRank;
-                    if (XP < 0)
-                        XP = 0;
-                    XPtonextRank *= 2;
-                    StartCoroutine(AddXP());
-                }
+                Rank++;
+                XP -= XPtonextRank;
+                if (XP < 0)
+                    XP = 0;
+                XPtonextRank *= 2;
+                StartCoroutine(AddXP());
             }
         }
         RankText.text = "Rank: " + Rank.ToString();
@@ -82,10 +68,10 @@ public class RankManager : MonoBehaviour
         {
             Rank = int.Parse(value);
         });
-        //GameJolt.API.DataStore.Get("XP", false, (string value) =>
-        //{
-        //    XP = float.Parse(value);
-        //});
+        GameJolt.API.DataStore.Get("XP", false, (string value) =>
+        {
+            XP = float.Parse(value);
+        });
         GameJolt.API.DataStore.Get("XPtonextRank", false, (string value) =>
         {
             XPtonextRank = int.Parse(value);
@@ -98,48 +84,44 @@ public class RankManager : MonoBehaviour
         BackedFromGame = 0;
         PlayerPrefs.SetInt("BackedFromGame", 0);
         PlayerPrefs.SetInt("NewsShowed", 0);
-        PlayerPrefs.Save();
-
     }
 
     IEnumerator AddRank()
     {
-
         yield return new WaitForSeconds(1.5f);
-        DataStore.SetSegmented("XP", XP.ToString(), false, success => { });
+        GameJolt.API.DataStore.Set("XP", XP.ToString(), false, (bool success) => { });
         GameJolt.API.DataStore.Set("XPtonextRank", XPtonextRank.ToString(), false, (bool success) => { });
         GameJolt.API.DataStore.Set("Rank", Rank.ToString(), false, (bool success) => { });
     }
-    private bool canrankup = true;
+
     IEnumerator AddXP()
     {
-        canrankup = false;
-        Loading.SetActive(true);
         CancelInvoke();
+        GameJolt.API.DataStore.Get("XP", false, (string value) =>
+        {
+            XP = float.Parse(value);
+        });
         yield return new WaitForSeconds(1.5f);
         //Loading gameobject
         ScoreToAddToXp = PlayerPrefs.GetInt("ScoreToAddXP"); // Dont remove
         XP += ScoreToAddToXp;
-        GameJolt.API.DataStore.Set("Rank", Rank.ToString(), false, (bool success) => { });
-
-        DataStore.SetSegmented("XP", XP.ToString(), false, success => { });
+        GameJolt.API.DataStore.Set("XP", XP.ToString(), false, (bool success) => { });
         yield return new WaitForSeconds(0.4f);
+
+        GameJolt.API.DataStore.Set("Rank", Rank.ToString(), false, (bool success) => { });
         yield return new WaitForSeconds(0.4f);
 
         GameJolt.API.DataStore.Set("XPtonextRank", XPtonextRank.ToString(), false, (bool success) => { });
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.2f);
         Debug.Log(ScoreToAddToXp.ToString());
         ScoreToAddToXp = 0;
         PlayerPrefs.DeleteKey("ScoreToAddXP"); //Dont remove
 
         BackedFromGame = 0;
         PlayerPrefs.SetInt("BackedFromGame", 0);
-        PlayerPrefs.Save();
         //Loaded gameobject
         Debug.Log("All saved online.");
         InvokeRepeating("CheckForNewScore", 5.0f, 5.0f);
-        Loading.SetActive(false);
-        canrankup = true;
-    }
 
+    }
 }

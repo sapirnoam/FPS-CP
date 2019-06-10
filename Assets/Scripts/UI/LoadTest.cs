@@ -222,26 +222,17 @@ public class LoadTest : MonoBehaviour
     {
         GameJolt.API.DataStore.Get("Rank", false, (string value) =>
         {
-            if (value != null)
-            {
-                rankManager.Rank = int.Parse(value);
-
-            }
+            rankManager.Rank = int.Parse(value);
         });
         GameJolt.API.DataStore.Get("XP", false, (string value) =>
         {
-            if (value != null)
-            {
-                float.TryParse(value, out rankManager.XP);
-            }
+            rankManager.XP = float.Parse(value);
         });
         GameJolt.API.DataStore.Get("XPtonextRank", false, (string value) =>
         {
-            if (value != null)
-            {
-                rankManager.XPtonextRank = int.Parse(value);
-            }
+            rankManager.XPtonextRank = int.Parse(value);
         });
+
     }
     public void SignOutRanking()
     {
