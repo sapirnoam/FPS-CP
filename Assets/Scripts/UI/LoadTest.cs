@@ -108,20 +108,6 @@ public class LoadTest : MonoBehaviour
                 PlayerPrefs.SetString("Version", www.text);
                 PlayerPrefs.Save();
             }
-            else if (NoInternet == true && GameVersion == Application.version)
-            {
-                Outofdate.SetActive(false);
-                StartCoroutine(NoConnection());
-                SignOut.SetActive(false);
-                LoginIn.SetActive(false);
-                ReloginToGame.SetActive(true);
-            }
-            else if (www.text == "ALPHA")
-            {
-                Debug.Log("Up to date");
-                PlayerPrefs.SetString("Version", www.text);
-                PlayerPrefs.Save();
-            }
             else
             {
                 Outofdate.SetActive(true);
@@ -186,6 +172,11 @@ public class LoadTest : MonoBehaviour
                     SignOut.SetActive(true);
                     LoginIn.SetActive(false);
                     GameJoltRankingAutoLogin();
+                    if (NEWSshowd == false)
+                    {
+                        News.SetActive(true);
+                    }
+                    NewsAnim.SetTrigger("Logged");
                 }
             });
         }
