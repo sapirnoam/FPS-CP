@@ -29,7 +29,15 @@ Material:
         m_Scale: {x: 1024, y: 1024}
         m_Offset: {x: 0, y: 0}
     - _FoamMap:
-        m_Texture: {fileID: 2800000, guid: d01457b88b1c5174ea4235d140b5fab8, type: 3}
+        m_Texture: {fileID: 2800000, guid: b187048dd355b8444a5b336fc7907768, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Foam_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
@@ -45,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WaterNormal:
-        m_Texture: {fileID: 2800000, guid: dd2fd2df93418444c8e280f1d34deeb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: fcfd1915c7e726c4494bf81cc6905fc9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -57,9 +65,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Amount: 1
     - _CausticsOpacity: 1
     - _CausticsThickness: 30
     - _ColorBlendingAmount: 1
+    - _Cutoff: 0.5
     - _DeepColorBlend: 1
     - _DeepDepth: 30
     - _DeepEdgeBlend: -2
@@ -77,12 +87,12 @@ Material:
     - _Float4: 0.4
     - _FoamDepth: 2.8
     - _FoamFalloff: 3.5
-    - _FoamOpacity: 0.5
+    - _FoamOpacity: 1
     - _FoamSmoothness: 1
     - _FoamSpecular: 1
-    - _GlobalTiling: 4096
+    - _GlobalTiling: 2446
     - _GlossyReflections: 0
-    - _NormalScale: 1.24
+    - _NormalScale: 0.88
     - _ReflectionAmount: 1
     - _ShadowDepth: 1
     - _ShallowColorBlend: 0.905
@@ -92,23 +102,32 @@ Material:
     - _ShorelineAmount: 1
     - _ShorelineFalloff: 0.502
     - _SpecularHighlights: 1
-    - _SurfaceColorBlend: 1
-    - _SurfaceOpacity: 0.848
+    - _SurfaceColorBlend: 0.91
+    - _SurfaceOpacity: 1
     - _TessValue: 16
     - _UseSkyboxRelfections: 0
     - _WaterDepth: 1
     - _WaterFalloff: 2
-    - _WaterSmoothness: 0.855
-    - _WaterSpecular: 0.006
+    - _WaterOpacity: 0
+    - _WaterReflection: 0
+    - _WaterScale: 0
+    - _WaterSmoothness: 0.317
+    - _WaterSpecular: 0
+    - _WaterSpeed: 0
+    - _Wave: 0
     - _WavesAmount: 8.87
     - _WavesAmplitude: 0.1
+    - _WindSpeed: 0
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 0.1532764, g: 0.6105888, b: 0.9926471, a: 0}
+    - _ColorTint: {r: 0, g: 0, b: 0, a: 0}
     - _DeepColor: {r: 0.07058769, g: 0.17646986, b: 0.32941103, a: 1}
-    - _FoamTint: {r: 0, g: 0.19646612, b: 0.3018868, a: 1}
+    - _FoamTint: {r: 0.7830189, g: 0.56377363, b: 0, a: 1}
     - _ShallowColor: {r: 0, g: 0.5416665, b: 1, a: 1}
     - _ShalowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SurfaceColor: {r: 0.0011569981, g: 0.1604311, b: 0.24528301, a: 1}
+    - _SurfaceColor: {r: 0.7169812, g: 0.28984347, b: 0, a: 1}
     - _WaterColor: {r: 0.32515138, g: 0.5365902, b: 0.71323526, a: 0}
-    - _WaveSpeed: {r: -0.05, g: 0.05, b: 0, a: 0}
+    - _WaterDeepColor: {r: 0.6320754, g: 0, b: 0, a: 0}
+    - _WaterShallowColor: {r: 1, g: 0, b: 0, a: 0}
+    - _WaveSpeed: {r: 0.024, g: 0, b: 0, a: 0}

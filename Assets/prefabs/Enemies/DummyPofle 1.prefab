@@ -194,6 +194,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e9b1a4af55a53834f9a1ebd0220762fe, type: 3}
   - {fileID: 8300000, guid: 61d8cacb0f47db04e8f6b9e57cebf76a, type: 3}
   effect: {fileID: 2515020518904161886, guid: 0b0187c57823d0e4b886f56625fa8f84, type: 3}
+  effectFire: {fileID: 8410760441659254821, guid: 1625558c70b5b61488e9bcc7daa9c190,
+    type: 3}
   Damage: 10
   healthPlayer: {fileID: 0}
   AttackRadious: 2.96

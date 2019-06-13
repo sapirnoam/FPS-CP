@@ -46,20 +46,19 @@ public class PofleAnimatorController : MonoBehaviour
     GameObject[] Weapons;
     public IEnumerator Die()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Weapons = GameObject.FindGameObjectsWithTag("Weapon");
         for (var i = 0; i < Weapons.Length; i++)
             Destroy(Weapons[i]);
         IsDead = true;
         mainCamera.SetActive(false);
         DeathCamera.SetActive(true);
-        Instantiate(effectBlood, effecttransform.position, effecttransform.rotation);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         yield return new WaitForSeconds(0.2f);
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < 100)
+            if (distance < 55)
             {
                 target.GetComponent<Enemy>().DieWithOutGive();
             }

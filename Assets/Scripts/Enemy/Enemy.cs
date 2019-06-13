@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     public Transform effecttransform; // The transform for the effect
     public AudioClip[] AudioImpact; //Impact audio
     public GameObject effect; // The death effect
+    public GameObject effectFire; // The death Fire effect
 
 
     // Attacking the player components ; Attacking while player tuches the enemy!, Not weapon attacking.//
@@ -119,7 +120,15 @@ public class Enemy : MonoBehaviour
             HealthToShowDamageHardS();
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Lava")
+        {
+            AudioS.PlayOneShot(Death[Random.Range(0, Death.Length)]);
+            Destroy(gameObject);
+            Instantiate(effectFire, effecttransform.position, effecttransform.rotation);
+        }
+    }
 
     public void OnDrawGizmosSelected()
     {
@@ -132,11 +141,11 @@ public class Enemy : MonoBehaviour
     public GameObject Explodedversion;
     void Die()
     {
-        Destroy(gameObject);
         scoreScript.score += ScoreAdded;
         scoreScript.Kills += 1;
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
+        Destroy(gameObject);
     }
 
     public void DieHard()
@@ -149,7 +158,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         AudioS.PlayOneShot(Gore[Random.Range(0, Gore.Length)]);
-
     }
 
     void HealthToShowDamageS()
