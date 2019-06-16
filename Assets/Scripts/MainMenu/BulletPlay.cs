@@ -30,6 +30,6 @@ public class BulletPlay : MonoBehaviour
         playPanel.SetActive(true);
         audioS.PlayOneShot(ShotAudioClip);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

@@ -16,7 +16,7 @@ public class RankManager : MonoBehaviour
 
     public int BackedFromGame = 0; //If the player came back from game write xp and stuff, If not, Dont write.
 
-
+    public bool AllLoaded = false;
     public GameObject Loading;
     private void Start()
     {
@@ -57,18 +57,22 @@ public class RankManager : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+        if (AllLoaded == true)
         {
-            if (XP >= XPtonextRank && canrankup == true)
+            if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
             {
-                if (canrankup == true)
+                if (XP >= XPtonextRank && canrankup == true)
                 {
-                    Rank++;
-                    XP -= XPtonextRank;
-                    if (XP < 0)
-                        XP = 0;
-                    XPtonextRank *= 2;
-                    StartCoroutine(AddXP());
+                    if (canrankup == true)
+                    {
+                        Rank++;
+                        XP -= XPtonextRank;
+                        if (XP < 0)
+                            XP = 0;
+                        XPtonextRank *= 2;
+                        StartCoroutine(AddXP());
+                        Debug.Log("RankUp");
+                    }
                 }
             }
         }

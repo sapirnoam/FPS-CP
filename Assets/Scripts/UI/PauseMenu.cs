@@ -68,7 +68,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioListener.volume = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void ResetGame()
     {
@@ -81,6 +81,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioListener.volume = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

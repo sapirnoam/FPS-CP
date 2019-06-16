@@ -19,6 +19,7 @@ public class LoadTest : MonoBehaviour
     public GameObject News;
     private bool NEWSshowd = true;
     public RankManager rankManager;
+    private int Loaded = 0;
     private void Start()
     {
         GameVersion = PlayerPrefs.GetString("Version");
@@ -31,6 +32,9 @@ public class LoadTest : MonoBehaviour
         else
         {
             NEWSshowd = false;
+            PlayerPrefs.SetInt("BackedFromGame", 0);
+            PlayerPrefs.DeleteKey("BackedFromGame");
+            PlayerPrefs.Save();
         }
 
         StartCoroutine(GetGameVersionFromSite());
@@ -127,6 +131,14 @@ public class LoadTest : MonoBehaviour
         {
             UserName.text = "NOT CONNECTED";
         }
+        if (Loaded >= 3)
+        {
+            rankManager.AllLoaded = true;
+        }
+        else
+        {
+            rankManager.AllLoaded = false;
+        }
     }
 
     public void PoflesSlayer()
@@ -211,12 +223,20 @@ public class LoadTest : MonoBehaviour
 
     public void GameJoltRankingAutoLogin()
     {
+        GameJolt.API.DataStore.Get("XPtonextRank", false, (string value) =>
+        {
+            if (value != null)
+            {
+                rankManager.XPtonextRank = int.Parse(value);
+                Loaded++;
+            }
+        });
         GameJolt.API.DataStore.Get("Rank", false, (string value) =>
         {
             if (value != null)
             {
                 rankManager.Rank = int.Parse(value);
-
+                Loaded++;
             }
         });
         GameJolt.API.DataStore.Get("XP", false, (string value) =>
@@ -224,13 +244,7 @@ public class LoadTest : MonoBehaviour
             if (value != null)
             {
                 float.TryParse(value, out rankManager.XP);
-            }
-        });
-        GameJolt.API.DataStore.Get("XPtonextRank", false, (string value) =>
-        {
-            if (value != null)
-            {
-                rankManager.XPtonextRank = int.Parse(value);
+                Loaded++;
             }
         });
     }

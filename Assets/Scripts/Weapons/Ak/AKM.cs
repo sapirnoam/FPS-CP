@@ -27,7 +27,6 @@ public class AKM : MonoBehaviour
     public GameObject ImpactEffect;
     public WeaponsSwitcher ws;
 
-    private bool ReloadNOW = false;
     private float nextTimeToFire = 0f;
     public float AllowReload = 2.25f;
 
@@ -41,15 +40,21 @@ public class AKM : MonoBehaviour
         LightBullet.SetActive(false);
         crosshair.SetActive(false);
 
+        ammoTextActive.SetActive(false);
+        ReloadImage.SetActive(false);
     }
-
+    private void OnEnable()
+    {
+        shootpermission = true;
+        ammoTextActive.SetActive(true);
+        ReloadImage.SetActive(false);
+    }
     void FixedUpdate()
     {
         if (WeaponParent.IsChildOf(WeaponsHolder))
         {
             LightBullet.SetActive(true);
             crosshair.SetActive(true);
-
             if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && shootpermission == true && Time.timeScale >= 0.5) //Mouse
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
@@ -62,7 +67,6 @@ public class AKM : MonoBehaviour
             }
             if (ammo <= 0 && shootpermission == true)
             {
-                ReloadNOW = true;
                 shootpermission = false;
                 animator.SetTrigger("Reload");
                 ammoText.text = "0";
@@ -72,14 +76,13 @@ public class AKM : MonoBehaviour
 
             if (Input.GetButtonDown("Reload") && ammo <= 59 && Time.timeScale >= 0.5)
             {
-                ReloadNOW = true;
                 animator.SetTrigger("Reload");
                 shootpermission = false;
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
             }
-            if (ammo > 0 && ReloadNOW == false)
+            if (ammo > 0)
             {
                 ammoText.text = ammo.ToString();
             }
@@ -136,19 +139,11 @@ void Shoot()
     {
         ammo = 60;
         shootpermission = true;
-        ReloadNOW = false;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
     }
     void ReloadSound()
     {
-        StartCoroutine(ReloadFalse());
-        ws.IsReloading = true;
         audioSource.PlayOneShot(Reload);
-    }
-    IEnumerator ReloadFalse()
-    {
-        yield return new WaitForSeconds(AllowReload);
-        ws.IsReloading = false;
     }
 }
