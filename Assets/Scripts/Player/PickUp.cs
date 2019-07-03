@@ -10,6 +10,7 @@ public class PickUp : MonoBehaviour
 
     public float maxDistance = 5;
     public GameObject PickUpText;
+    public GameObject CanOpenBox;
     void Start()
     {
         PickUpText.SetActive(false);
@@ -46,9 +47,35 @@ public class PickUp : MonoBehaviour
                     PickUpText.SetActive(false);
                 }
             }
-            else {
+            else
+            {
                 PickUpText.SetActive(false);
             }
+            if (hitInfo.transform.CompareTag("Box") && hitInfo.transform.parent == null)
+            {
+                if (IsUnlockingCrate == false)
+                    CanOpenBox.SetActive(true);
+
+                //if the user presses F
+                if (Input.GetButtonDown("PickUp")) //Should assign xbox controller here.
+                {
+                    HealthBox Box = hitInfo.transform.GetComponent<HealthBox>();
+                    Box.OpenBox();
+                    IsUnlockingCrate = true;
+                    CanOpenBox.SetActive(false);
+                    StartCoroutine(IsUnlockingDisable());
+                }
+            }
+            else
+            {
+                CanOpenBox.SetActive(false);
+            }
         }
+    }
+    public bool IsUnlockingCrate = false;
+    IEnumerator IsUnlockingDisable()
+    {
+        yield return new WaitForSeconds(3f);
+        IsUnlockingCrate = false;
     }
 }

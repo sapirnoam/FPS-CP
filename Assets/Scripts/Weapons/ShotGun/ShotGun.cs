@@ -24,6 +24,7 @@ public class ShotGun : MonoBehaviour
     public AudioSource audioSource;
     public Animator animator;
     public Animator animator2;
+    public DropWeapon Dropweapon;
 
     public AudioClip[] shootSounds;
 
@@ -56,6 +57,7 @@ public class ShotGun : MonoBehaviour
         shootpermission = true;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
+        Dropweapon.canDrop = true;
     }
     void FixedUpdate()
     {
@@ -87,6 +89,7 @@ public class ShotGun : MonoBehaviour
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
+                Dropweapon.canDrop = false;
             }
 
             if (Input.GetButtonDown("Reload") && ammo <= 10 && Time.timeScale >= 0.5)
@@ -96,6 +99,8 @@ public class ShotGun : MonoBehaviour
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
+                Dropweapon.canDrop = false;
+
             }
             if (ammo > 0)
             {
@@ -148,10 +153,11 @@ public class ShotGun : MonoBehaviour
 
     void ReloadAnimation()
     {
-            ammo = 12;
-            shootpermission = true;
-            ammoTextActive.SetActive(true);
-            ReloadImage.SetActive(false);
+        ammo = 12;
+        shootpermission = true;
+        ammoTextActive.SetActive(true);
+        ReloadImage.SetActive(false);
+        Dropweapon.canDrop = true;
     }
     void ReloadSound()
     {

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class KeysManager : MonoBehaviour
 {
-    public GameObject Key;
     public Text keys;
     public GameObject KeysImage;
     public GameObject KeysText;

@@ -494,8 +494,6 @@ namespace Gaia
             m_session.m_seaLevel = Mathf.Clamp(th * sScale, 0f, 150f);
 
             #if UNITY_EDITOR
-            AssetDatabase.CreateAsset(m_session, string.Format("Assets/Gaia/Data/GS-{0:yyyyMMdd-HHmmss}.asset", DateTime.Now));
-            AssetDatabase.SaveAssets();
             #endif
             return m_session;
         }

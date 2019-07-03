@@ -19,6 +19,8 @@ public class PunchMain : MonoBehaviour
     public Collider Hand2Collder;
     public Collider Hand11Collder;
     public Collider Hand22Collder;
+    public AudioClip[] PunchSounds;
+    public AudioSource audios;
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
@@ -55,7 +57,7 @@ public class PunchMain : MonoBehaviour
         {
             int randomNumber = Random.Range(1, 5);
             anim.SetTrigger("Atc" + randomNumber);
-
+            audios.PlayOneShot(PunchSounds[Random.Range(1, PunchSounds.Length)]);
         }
     }
 

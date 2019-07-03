@@ -8,6 +8,7 @@ public class DropWeapon : MonoBehaviour
     public GameObject WeaponsHolderGameobject;
     public Rigidbody rb;
     public Collider collider;
+    public bool canDrop = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class DropWeapon : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetButtonDown("Drop")) //Should assign xbox controller here.
+        if (Input.GetButtonDown("Drop") && canDrop == true) //Should assign xbox controller here.
         {
             for (int i = 0; i < WeaponsHolderGameobject.transform.childCount; i++)
             {

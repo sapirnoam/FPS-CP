@@ -35,6 +35,7 @@ public class LoadTest : MonoBehaviour
             PlayerPrefs.SetInt("BackedFromGame", 0);
             PlayerPrefs.DeleteKey("BackedFromGame");
             PlayerPrefs.Save();
+            News.SetActive(false);
         }
 
         StartCoroutine(GetGameVersionFromSite());
@@ -44,7 +45,7 @@ public class LoadTest : MonoBehaviour
         SignOut.SetActive(false);
         SignOutRanking();
 
-        News.SetActive(false);
+
         if (Application.internetReachability == NetworkReachability.NotReachable) // No Internet
         {
             StartCoroutine(NoConnection());
@@ -62,6 +63,7 @@ public class LoadTest : MonoBehaviour
                 if (NEWSshowd == false)
                 {
                     News.SetActive(true);
+                    NEWSshowd = true;
                 }
                 NewsAnim.SetTrigger("Logged");
             }
@@ -89,6 +91,8 @@ public class LoadTest : MonoBehaviour
                         if (NEWSshowd == false)
                         {
                             News.SetActive(true);
+                            NEWSshowd = true;
+
                         }
                         NewsAnim.SetTrigger("Logged");
                     }
@@ -187,6 +191,8 @@ public class LoadTest : MonoBehaviour
                     if (NEWSshowd == false)
                     {
                         News.SetActive(true);
+                        NEWSshowd = true;
+
                     }
                     NewsAnim.SetTrigger("Logged");
                 }

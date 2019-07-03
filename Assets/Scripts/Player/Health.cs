@@ -41,9 +41,9 @@ public class Health : MonoBehaviour
            health = 100;
         }
 
-      if (health < 8)
-     {
-         FrictionFlowRain.SetActive(true);
-     }
+        if (health < 8)
+        {
+            FrictionFlowRain.SetActive(true);
+        }
     }
 }

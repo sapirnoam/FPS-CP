@@ -106,7 +106,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Strength: 50
-    - _SurfaceColorBlend: 0.9
+    - _SurfaceColorBlend: 1
     - _SurfaceOpacity: 1
     - _UVSec: 0
     - _WaterDepth: 0
@@ -123,7 +123,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamTint: {r: 1, g: 1, b: 1, a: 0}
-    - _SurfaceColor: {r: 0.021484066, g: 0.6320754, b: 0.020870427, a: 1}
+    - _SurfaceColor: {r: 0.027233878, g: 0.49561885, b: 0.6415094, a: 1}
     - _WaterDeepColor: {r: 1, g: 1, b: 1, a: 0}
     - _WaterShallowColor: {r: 1, g: 1, b: 1, a: 0}
     - _WaveSpeed: {r: -0.04, g: 0.045, b: 0, a: 0}

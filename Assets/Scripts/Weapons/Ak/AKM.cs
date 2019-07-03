@@ -20,12 +20,12 @@ public class AKM : MonoBehaviour
     public AudioClip Reload;
     public AudioSource audioSource;
     public Animator animator;
+    public DropWeapon Dropweapon;
     public AudioClip[] shootSounds;
 
     public Camera Cam;
     public ParticleSystem muzzleFlash;
     public GameObject ImpactEffect;
-    public WeaponsSwitcher ws;
 
     private float nextTimeToFire = 0f;
     public float AllowReload = 2.25f;
@@ -48,6 +48,7 @@ public class AKM : MonoBehaviour
         shootpermission = true;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
+        Dropweapon.canDrop = true;
     }
     void FixedUpdate()
     {
@@ -72,6 +73,7 @@ public class AKM : MonoBehaviour
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
+                Dropweapon.canDrop = false;
             }
 
             if (Input.GetButtonDown("Reload") && ammo <= 59 && Time.timeScale >= 0.5)
@@ -81,6 +83,7 @@ public class AKM : MonoBehaviour
                 ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
+                Dropweapon.canDrop = false;
             }
             if (ammo > 0)
             {
@@ -141,6 +144,8 @@ void Shoot()
         shootpermission = true;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
+        Dropweapon.canDrop = true;
+
     }
     void ReloadSound()
     {
