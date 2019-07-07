@@ -21,19 +21,26 @@ public class DropWeapon : MonoBehaviour
     {
         if (Input.GetButtonDown("Drop") && canDrop == true) //Should assign xbox controller here.
         {
-            for (int i = 0; i < WeaponsHolderGameobject.transform.childCount; i++)
+            if (transform.parent.tag == "WeaponsHolder")
             {
-                var child = WeaponsHolderGameobject.transform.GetChild(i).gameObject;
-                if (child == null)
-                    Debug.Log("");
-                child.SetActive(true);
-                break;
+                for (int i = 0; i < WeaponsHolderGameobject.transform.childCount; i++)
+                {
+                    var child = WeaponsHolderGameobject.transform.GetChild(i).gameObject;
+                    if (child == null)
+                        Debug.Log("");
+                    child.SetActive(true);
+                    break;
+                }
+                WeaponThis.parent = null;
+                rb.isKinematic = false; //"disabling" the rigidbody (it's still active but gravity won't apply to it.
+                rb.useGravity = true; //"disabling" the rigidbody (it's still active but gravity won't apply to it.
+                collider.isTrigger = false; //disabling the collider.
+                rb.AddForce(-3, 0, transform.forward.z * 500);
             }
-            WeaponThis.parent = null;
-            rb.isKinematic = false; //"disabling" the rigidbody (it's still active but gravity won't apply to it.
-            rb.useGravity = true; //"disabling" the rigidbody (it's still active but gravity won't apply to it.
-            collider.isTrigger = false; //disabling the collider.
-            rb.AddForce(-3, 0, transform.forward.z * 500);
+            else
+            {
+                return;
+            }
         }
     }
 }

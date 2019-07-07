@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 public class announcementsSwitcher : MonoBehaviour
 {
-
-
     public int selectedWeapon = 0;
     // Start is called before the first frame update
     void Start()
@@ -47,9 +46,29 @@ public class announcementsSwitcher : MonoBehaviour
             i++;
         }
     }
-
+    private bool toggle;
+    public GameObject Announcments;
+    public Text HideText;
+    public void ShowHide()
+    {
+        toggle = !toggle;
+        if (toggle)
+        {
+            Announcments.SetActive(true);
+            HideText.text = "HIDE".ToString();
+        }
+        if (!toggle)
+        {
+            Announcments.SetActive(false);
+            HideText.text = "SHOW".ToString();
+        }
+    }
     public void Patreon()
     {
         Application.OpenURL("https://www.patreon.com/Noam3D/");
+    }
+    public void CheckPatchNews()
+    {
+        Application.OpenURL("https://noam3d.com/closed-testing-v5-huge-update-gamejolt/");
     }
 }

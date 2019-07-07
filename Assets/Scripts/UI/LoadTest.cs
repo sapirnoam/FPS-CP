@@ -15,17 +15,17 @@ public class LoadTest : MonoBehaviour
     public Text UserName;
     public string GameVersion;
     public Text Ver;
-    public Animator NewsAnim;
+    /*public Animator NewsAnim;
     public GameObject News;
-    private bool NEWSshowd = true;
+    private bool NEWSshowd = true; */
     public RankManager rankManager;
     private int Loaded = 0;
     private void Start()
     {
         GameVersion = PlayerPrefs.GetString("Version");
-        PlayerPrefs.SetInt("NewsShowed", 1);
+        //PlayerPrefs.SetInt("NewsShowed", 1);
         PlayerPrefs.Save();
-        if (PlayerPrefs.GetInt("NewsShowed") == 1)
+        /*if (PlayerPrefs.GetInt("NewsShowed") == 1)
         {
             NEWSshowd = true;
         }
@@ -37,10 +37,12 @@ public class LoadTest : MonoBehaviour
             PlayerPrefs.Save();
             News.SetActive(false);
         }
+        */
 
         StartCoroutine(GetGameVersionFromSite());
         YourVersionText.text = "Your Game version:" + Application.version.ToString();
         Ver.text = "Game Version: " + GameVersion;
+        
         LoginIn.SetActive(true);
         SignOut.SetActive(false);
         SignOutRanking();
@@ -60,12 +62,12 @@ public class LoadTest : MonoBehaviour
             {
                 LoginIn.SetActive(false);
                 SignOut.SetActive(true);
-                if (NEWSshowd == false)
+                /*if (NEWSshowd == false)
                 {
                     News.SetActive(true);
                     NEWSshowd = true;
                 }
-                NewsAnim.SetTrigger("Logged");
+                NewsAnim.SetTrigger("Logged");*/
             }
 
             if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
@@ -88,13 +90,13 @@ public class LoadTest : MonoBehaviour
                         SignOut.SetActive(true);
                         LoginIn.SetActive(false);
                         GameJoltRankingAutoLogin();
-                        if (NEWSshowd == false)
+                        /*if (NEWSshowd == false)
                         {
                             News.SetActive(true);
                             NEWSshowd = true;
 
                         }
-                        NewsAnim.SetTrigger("Logged");
+                        NewsAnim.SetTrigger("Logged"); */
                     }
                 });
                 }
@@ -188,13 +190,13 @@ public class LoadTest : MonoBehaviour
                     SignOut.SetActive(true);
                     LoginIn.SetActive(false);
                     GameJoltRankingAutoLogin();
-                    if (NEWSshowd == false)
+                    /*if (NEWSshowd == false)
                     {
                         News.SetActive(true);
                         NEWSshowd = true;
 
                     }
-                    NewsAnim.SetTrigger("Logged");
+                    NewsAnim.SetTrigger("Logged");*/
                 }
             });
         }
@@ -222,8 +224,8 @@ public class LoadTest : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        NEWSshowd = false;
-        PlayerPrefs.SetInt("NewsShowed", 0);
+        //NEWSshowd = false;
+        //PlayerPrefs.SetInt("NewsShowed", 0);
         PlayerPrefs.Save();
     }
 
