@@ -1,0 +1,1416 @@
+fileFormatVersion: 2
+guid: a21bc8129f1f10547b00154c13f5051e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CG
+    100002: Head
+    100004: L Calf
+    100006: L Clavicle
+    100008: L Finger0
+    100010: L Finger01
+    100012: L Finger02
+    100014: L Finger1
+    100016: L Finger11
+    100018: L Finger12
+    100020: L Finger2
+    100022: L Finger21
+    100024: L Finger22
+    100026: L Finger3
+    100028: L Finger31
+    100030: L Finger32
+    100032: L Finger4
+    100034: L Finger41
+    100036: L Finger42
+    100038: L Foot
+    100040: L Forearm
+    100042: L Hand
+    100044: L Thigh
+    100046: L Toe0
+    100048: L UpperArm
+    100050: Male01
+    100052: Neck
+    100054: Pelvis
+    100056: //RootNode
+    100058: R Calf
+    100060: R Clavicle
+    100062: R Finger0
+    100064: R Finger01
+    100066: R Finger02
+    100068: R Finger1
+    100070: R Finger11
+    100072: R Finger12
+    100074: R Finger2
+    100076: R Finger21
+    100078: R Finger22
+    100080: R Finger3
+    100082: R Finger31
+    100084: R Finger32
+    100086: R Finger4
+    100088: R Finger41
+    100090: R Finger42
+    100092: R Foot
+    100094: R Forearm
+    100096: R Hand
+    100098: R Thigh
+    100100: R Toe0
+    100102: R UpperArm
+    100104: Spine
+    100106: Spine1
+    100108: Spine2
+    400000: CG
+    400002: Head
+    400004: L Calf
+    400006: L Clavicle
+    400008: L Finger0
+    400010: L Finger01
+    400012: L Finger02
+    400014: L Finger1
+    400016: L Finger11
+    400018: L Finger12
+    400020: L Finger2
+    400022: L Finger21
+    400024: L Finger22
+    400026: L Finger3
+    400028: L Finger31
+    400030: L Finger32
+    400032: L Finger4
+    400034: L Finger41
+    400036: L Finger42
+    400038: L Foot
+    400040: L Forearm
+    400042: L Hand
+    400044: L Thigh
+    400046: L Toe0
+    400048: L UpperArm
+    400050: Male01
+    400052: Neck
+    400054: Pelvis
+    400056: //RootNode
+    400058: R Calf
+    400060: R Clavicle
+    400062: R Finger0
+    400064: R Finger01
+    400066: R Finger02
+    400068: R Finger1
+    400070: R Finger11
+    400072: R Finger12
+    400074: R Finger2
+    400076: R Finger21
+    400078: R Finger22
+    400080: R Finger3
+    400082: R Finger31
+    400084: R Finger32
+    400086: R Finger4
+    400088: R Finger41
+    400090: R Finger42
+    400092: R Foot
+    400094: R Forearm
+    400096: R Hand
+    400098: R Thigh
+    400100: R Toe0
+    400102: R UpperArm
+    400104: Spine
+    400106: Spine1
+    400108: Spine2
+    4300000: Male01
+    7400000: Iddle
+    7400002: Dance1
+    7400004: Dance2
+    9500000: //RootNode
+    13700000: Male01
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\n\t'Spine' has translation animation that will
+      be discarded.\n\t'Spine' is inbetween humanoid transforms and has rotation animation
+      that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftFoot
+      average position error 0.2 mm and maximum position error 7.2 mm at time 16:
+      6 (84.4%) Frame 486\n\tLeftUpperArm average position error 9.5 mm and maximum
+      position error 36.6 mm at time 11:22 (61.1%) Frame 352\n\tLeftLowerArm average
+      position error 9.5 mm and maximum position error 36.5 mm at time 11:22 (61.1%)
+      Frame 352\n\tLeftHand average position error 9.7 mm and maximum position error
+      36.5 mm at time 11:22 (61.1%) Frame 352\n\tRightUpperArm average position error
+      10.6 mm and maximum position error 40.8 mm at time 10:26 (56.6%) Frame 326\n\tRightLowerArm
+      average position error 10.6 mm and maximum position error 40.8 mm at time 10:26
+      (56.6%) Frame 326\n\tRightHand average position error 10.8 mm and maximum position
+      error 40.7 mm at time 10:26 (56.6%) Frame 326\n"
+    animationDoRetargetingWarnings: 1
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Iddle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 228
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CG
+        weight: 1
+      - path: CG/Pelvis
+        weight: 1
+      - path: CG/Pelvis/Spine
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot/L Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot/R Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01/L Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11/L Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21/L Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31/L Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41/L Finger42
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      - path: Male01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dance1
+      takeName: Take 001
+      firstFrame: 241
+      lastFrame: 380
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CG
+        weight: 1
+      - path: CG/Pelvis
+        weight: 1
+      - path: CG/Pelvis/Spine
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot/L Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot/R Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01/L Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11/L Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21/L Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31/L Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41/L Finger42
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      - path: Male01
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dance2
+      takeName: Take 001
+      firstFrame: 390
+      lastFrame: 576
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CG
+        weight: 1
+      - path: CG/Pelvis
+        weight: 1
+      - path: CG/Pelvis/Spine
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/L Thigh/L Calf/L Foot/L Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot
+        weight: 1
+      - path: CG/Pelvis/Spine/R Thigh/R Calf/R Foot/R Toe0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger0/L Finger01/L Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger1/L Finger11/L Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger2/L Finger21/L Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger3/L Finger31/L Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/L Clavicle/L UpperArm/L Forearm/L
+          Hand/L Finger4/L Finger41/L Finger42
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41
+        weight: 1
+      - path: CG/Pelvis/Spine/Spine1/Spine2/Neck/R Clavicle/R UpperArm/R Forearm/R
+          Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      - path: Male01
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger01
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger02
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger11
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger12
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger2
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger21
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger22
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger3
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger31
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger32
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger4
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger41
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L Finger42
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger01
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger02
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger11
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger12
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger2
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger21
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger22
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger3
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger31
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger32
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger4
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger41
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R Finger42
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: PolyArtHuman(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CG
+      parentName: 
+      position: {x: -0.04424053, y: 0.92870283, z: -0.024390535}
+      rotation: {x: -0.50000036, y: 0.49999964, z: 0.49999964, w: 0.50000036}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis
+      parentName: 
+      position: {x: 0.000000063297136, y: -0.044247903, z: 0.06960517}
+      rotation: {x: 0.50000006, y: -0.5000008, z: -0.49999934, w: -0.49999997}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: Spine
+      parentName: 
+      position: {x: -0.100494765, y: -0.00007933855, z: 0.0000072145463}
+      rotation: {x: 0.0000020712616, y: 0.0000007152558, z: 0.00039817396, w: -0.99999994}
+      scale: {x: 0.99999976, y: 0.99999964, z: 0.9999998}
+    - name: Spine1
+      parentName: 
+      position: {x: -0.10078636, y: -0.000079889294, z: 0.0000071191785}
+      rotation: {x: 0.000000029802322, y: -0.000000029802322, z: -0.000000014901161,
+        w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Spine2
+      parentName: 
+      position: {x: -0.10080192, y: -0.00015663146, z: 0.000013959408}
+      rotation: {x: 0.000000059604645, y: 0.000000059604645, z: 0.000000059604645,
+        w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: Neck
+      parentName: 
+      position: {x: -0.24783027, y: -0.012629966, z: -0.000000011920928}
+      rotation: {x: -0.000000014901161, y: 0.00000008940697, z: -0.04091887, w: 0.9991625}
+      scale: {x: 0.9999998, y: 1.0000001, z: 0.9999998}
+    - name: Head
+      parentName: 
+      position: {x: -0.075083464, y: 0, z: 0}
+      rotation: {x: 0.000000029802322, y: -0.0000005364418, z: -0.04131666, w: -0.9991461}
+      scale: {x: 1, y: 0.99999994, z: 1.0000002}
+    - name: R Clavicle
+      parentName: 
+      position: {x: 0.044114836, y: 0.024794769, z: -0.04275954}
+      rotation: {x: -0.66576, y: -0.05747576, z: -0.7439389, w: 0.0038750758}
+      scale: {x: 1, y: 1.0000002, z: 0.9999998}
+    - name: R UpperArm
+      parentName: 
+      position: {x: -0.14700189, y: 0, z: 0}
+      rotation: {x: 0.0014143285, y: 0.03488763, z: -0.061304856, w: -0.99750817}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999976}
+    - name: R Forearm
+      parentName: 
+      position: {x: -0.3428137, y: 0, z: 0}
+      rotation: {x: -0.00035586953, y: 0.0060800053, z: -0.03966497, w: -0.9991945}
+      scale: {x: 1.0000001, y: 0.9999996, z: 0.99999976}
+    - name: R Hand
+      parentName: 
+      position: {x: -0.23028938, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.70452416, y: 0.032128345, z: -0.057014912, w: 0.70665604}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: R Finger0
+      parentName: 
+      position: {x: -0.025106201, y: 0.011602993, z: 0.03717964}
+      rotation: {x: -0.5470819, y: 0.31219512, z: 0.273854, w: 0.7268009}
+      scale: {x: 0.9999996, y: 0.9999998, z: 0.9999998}
+    - name: R Finger01
+      parentName: 
+      position: {x: -0.040703885, y: 0, z: 0}
+      rotation: {x: 0.00000020861626, y: 0.0000005364418, z: -0.036756873, w: 0.99932426}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: R Finger02
+      parentName: 
+      position: {x: -0.03676117, y: 0, z: 0}
+      rotation: {x: -0.00000005960463, y: 0.000000029802315, z: 0.13614124, w: -0.9906895}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999964}
+    - name: R Finger4
+      parentName: 
+      position: {x: -0.1002803, y: -0.022621498, z: -0.0433041}
+      rotation: {x: 0.008639319, y: 0.051181927, z: 0.07210204, w: 0.99604577}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.9999998}
+    - name: R Finger41
+      parentName: 
+      position: {x: -0.027804565, y: 0, z: -0.000000038146972}
+      rotation: {x: -0.000000257045, y: -0.0000018477438, z: -0.03611627, w: 0.9993477}
+      scale: {x: 0.9999999, y: 1.0000004, z: 1.0000001}
+    - name: R Finger42
+      parentName: 
+      position: {x: -0.027804641, y: 0.000000038146972, z: 0.000000038146972}
+      rotation: {x: 0.0000004018657, y: 0.0000000949949, z: -0.14850472, w: 0.98891175}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.9999999}
+    - name: R Finger1
+      parentName: 
+      position: {x: -0.097799145, y: -0.03297733, z: 0.039447326}
+      rotation: {x: 0.0066356594, y: 0.048752654, z: 0.07097399, w: 0.996264}
+      scale: {x: 1.0000002, y: 1, z: 0.99999994}
+    - name: R Finger11
+      parentName: 
+      position: {x: -0.033365477, y: 0.000000019073486, z: 0.000000038146972}
+      rotation: {x: -0.00000011920929, y: -0.00000020116568, z: -0.037771605, w: 0.9992865}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1}
+    - name: R Finger12
+      parentName: 
+      position: {x: -0.033365555, y: 0, z: 0}
+      rotation: {x: -0.00000003511377, y: -0.000000018626451, z: -0.11640222, w: 0.9932022}
+      scale: {x: 1, y: 0.99999976, z: 0.9999999}
+    - name: R Finger3
+      parentName: 
+      position: {x: -0.10066436, y: -0.031684075, z: -0.014646454}
+      rotation: {x: 0.010809592, y: 0.05319612, z: 0.07279269, w: 0.99586874}
+      scale: {x: 1, y: 1.0000005, z: 0.9999999}
+    - name: R Finger31
+      parentName: 
+      position: {x: -0.033365477, y: -0.000000038146972, z: -0.000000038146972}
+      rotation: {x: -0.00000050198287, y: -0.00000032782555, z: -0.037769914, w: 0.99928653}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: R Finger32
+      parentName: 
+      position: {x: -0.033365477, y: 0.000000019073486, z: 0}
+      rotation: {x: 0.0000003108289, y: -0.000000016763806, z: -0.11640222, w: 0.9932022}
+      scale: {x: 0.9999997, y: 1.0000001, z: 0.9999999}
+    - name: R Finger2
+      parentName: 
+      position: {x: -0.10043548, y: -0.029626196, z: 0.013457222}
+      rotation: {x: 0.010368519, y: 0.052802786, z: 0.07255684, w: 0.9959116}
+      scale: {x: 0.9999999, y: 1.0000002, z: 0.99999994}
+    - name: R Finger21
+      parentName: 
+      position: {x: -0.03892639, y: -0.000000038146972, z: 0.000000038146972}
+      rotation: {x: -0.00000037252903, y: 0.00000064074993, z: -0.037768662, w: 0.99928653}
+      scale: {x: 1.0000004, y: 1, z: 0.9999998}
+    - name: R Finger22
+      parentName: 
+      position: {x: -0.03892639, y: 0.000000038146972, z: -0.000000038146972}
+      rotation: {x: 0.00000044133031, y: -0.000000033527602, z: -0.1164022, w: 0.9932022}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: L Clavicle
+      parentName: 
+      position: {x: 0.044114914, y: 0.02479454, z: 0.042759646}
+      rotation: {x: 0.6657601, y: 0.05747779, z: -0.74393886, w: 0.003873304}
+      scale: {x: 0.99999976, y: 0.9999994, z: 0.99999976}
+    - name: L UpperArm
+      parentName: 
+      position: {x: -0.14700186, y: -0.000000019073486, z: 0}
+      rotation: {x: 0.02235698, y: 0.03544463, z: 0.017512662, w: 0.9989681}
+      scale: {x: 0.9999994, y: 1, z: 1.0000004}
+    - name: L Forearm
+      parentName: 
+      position: {x: -0.3428137, y: 0, z: 0}
+      rotation: {x: -0.00038061565, y: 0.006503395, z: 0.037732463, w: 0.9992667}
+      scale: {x: 1.0000002, y: 0.9999997, z: 1.0000001}
+    - name: L Hand
+      parentName: 
+      position: {x: -0.23028947, y: 0, z: 0}
+      rotation: {x: 0.7046959, y: 0.032457378, z: 0.053191107, w: -0.70676804}
+      scale: {x: 0.99999994, y: 1, z: 1.0000004}
+    - name: L Finger0
+      parentName: 
+      position: {x: -0.025106162, y: 0.011602917, z: -0.037179716}
+      rotation: {x: 0.5411775, y: -0.30585337, z: 0.28859785, w: 0.72821146}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.99999976}
+    - name: L Finger01
+      parentName: 
+      position: {x: -0.04070381, y: 0, z: -0.000000038146972}
+      rotation: {x: 0.000000014901152, y: -0.0000003129242, z: -0.036758296, w: 0.9993242}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: L Finger02
+      parentName: 
+      position: {x: -0.036761224, y: 0, z: 0}
+      rotation: {x: -0.000000014901158, y: 0.00000014901158, z: 0.13614117, w: -0.9906895}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: L Finger4
+      parentName: 
+      position: {x: -0.100280225, y: -0.022621574, z: 0.043303985}
+      rotation: {x: -0.0086393105, y: -0.051182024, z: 0.07210216, w: 0.99604577}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.9999996}
+    - name: L Finger41
+      parentName: 
+      position: {x: -0.027804604, y: 0, z: 0.000000076293944}
+      rotation: {x: 0.0000006295734, y: 0.0000018924454, z: -0.03611885, w: 0.99934757}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: L Finger42
+      parentName: 
+      position: {x: -0.027804527, y: 0, z: -0.000000076293944}
+      rotation: {x: -0.00000038556755, y: -0.00000010244548, z: -0.14850467, w: 0.9889117}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: L Finger1
+      parentName: 
+      position: {x: -0.09779911, y: -0.03297739, z: -0.039447326}
+      rotation: {x: -0.0066358005, y: -0.048752714, z: 0.07097479, w: 0.9962639}
+      scale: {x: 0.9999999, y: 0.99999976, z: 0.99999976}
+    - name: L Finger11
+      parentName: 
+      position: {x: -0.033365514, y: 0.000000076293944, z: 0}
+      rotation: {x: 0.00000038160897, y: 0.0000000037252859, z: -0.037771694, w: 0.99928635}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: L Finger12
+      parentName: 
+      position: {x: -0.03336544, y: 0, z: 0}
+      rotation: {x: 0.00000013969839, y: 0.00000010803342, z: -0.11640236, w: 0.9932022}
+      scale: {x: 0.9999996, y: 0.99999976, z: 0.99999976}
+    - name: L Finger3
+      parentName: 
+      position: {x: -0.10066441, y: -0.03168411, z: 0.014646377}
+      rotation: {x: -0.010809862, y: -0.053195644, z: 0.072792135, w: 0.99586886}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999964}
+    - name: L Finger31
+      parentName: 
+      position: {x: -0.033365477, y: -0.000000038146972, z: 0}
+      rotation: {x: 0.0000001478473, y: 0.00000015273673, z: -0.037771117, w: 0.9992864}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: L Finger32
+      parentName: 
+      position: {x: -0.033365477, y: 0, z: 0}
+      rotation: {x: -0.00000029802308, y: 0.00000003911553, z: -0.1164021, w: 0.9932022}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000004}
+    - name: L Finger2
+      parentName: 
+      position: {x: -0.100435525, y: -0.029626254, z: -0.01345726}
+      rotation: {x: -0.010368746, y: -0.052803025, z: 0.072558425, w: 0.99591154}
+      scale: {x: 0.99999994, y: 1, z: 0.99999964}
+    - name: L Finger21
+      parentName: 
+      position: {x: -0.03892639, y: -0.000000038146972, z: 0}
+      rotation: {x: 0.00000050105103, y: 0.00000080093656, z: -0.03777162, w: 0.9992864}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: L Finger22
+      parentName: 
+      position: {x: -0.03892639, y: -0.000000038146972, z: -0.000000076293944}
+      rotation: {x: -0.00000041723243, y: 0.000000005587934, z: -0.11640233, w: 0.9932022}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999999}
+    - name: R Thigh
+      parentName: 
+      position: {x: 0.09871818, y: 0.020939607, z: -0.10225042}
+      rotation: {x: 0.009681553, y: -0.9994132, z: -0.00029353797, w: 0.032856435}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999999}
+    - name: R Calf
+      parentName: 
+      position: {x: -0.4368933, y: 0.000000038146972, z: 0}
+      rotation: {x: 0.00000011920926, y: -0.00000005960463, z: 0.061775178, w: 0.9980901}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: R Foot
+      parentName: 
+      position: {x: -0.43689334, y: 0.000000009536743, z: -0.000000019073486}
+      rotation: {x: -0.0017250476, y: -0.032812472, z: -0.0524733, w: 0.9980817}
+      scale: {x: 0.99999976, y: 0.99999976, z: 1.0000001}
+    - name: R Toe0
+      parentName: 
+      position: {x: -0.10048541, y: 0.10992177, z: 0}
+      rotation: {x: -0.00000011920926, y: -0.00000010486124, z: -0.70710677, w: 0.70710677}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: L Thigh
+      parentName: 
+      position: {x: 0.10086021, y: 0.0028354453, z: 0.10225049}
+      rotation: {x: 0.009681478, y: -0.9994132, z: 0.00029072165, w: -0.032856375}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
+    - name: L Calf
+      parentName: 
+      position: {x: -0.4368933, y: 0, z: 0}
+      rotation: {x: -0.00000010430811, y: 0, z: 0.061775267, w: 0.9980901}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: L Foot
+      parentName: 
+      position: {x: -0.43689334, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.0017252564, y: 0.032812297, z: -0.05247341, w: 0.9980817}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: L Toe0
+      parentName: 
+      position: {x: -0.1004854, y: 0.1099218, z: 0}
+      rotation: {x: -0.00000014901158, y: -0.00000010375493, z: -0.7071067, w: 0.70710677}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999999}
+    - name: Male01
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 1
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

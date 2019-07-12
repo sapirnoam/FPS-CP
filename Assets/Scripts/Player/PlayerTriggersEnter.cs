@@ -6,9 +6,7 @@ public class PlayerTriggersEnter : MonoBehaviour
 {
     public Health health;
     private float nextTimeToFire = 0f;
-    public float fireRate = 15f;
-    public GameObject effectFire; // The death Fire effect
-    public GameObject effectSmoke; // The death Fire effect
+    public float fireRate = 10f;
 
     // Start is called before the first frame update
     private void OnTriggerStay(Collider other)
@@ -16,19 +14,17 @@ public class PlayerTriggersEnter : MonoBehaviour
         if (other.gameObject.tag == "Lava" && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
-            health.health -= 30f;
+            health.health -= 35f;
             //Play Sound.
             //Change material
-            Instantiate(effectFire, transform.position, transform.rotation);
-
         }
-        if (other.gameObject.tag == "HotLava" && Time.time >= nextTimeToFire)
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            health.health -= 5f;
-            Instantiate(effectSmoke, transform.position, transform.rotation);
-            //Play Sound.
-            //Change 
-        }
+        //if (other.gameObject.tag == "HotLava" && Time.time >= nextTimeToFire)
+        //{
+        //    nextTimeToFire = Time.time + 1f / fireRate;
+         //   health.health -= 5f;
+         //   Instantiate(effectSmoke, transform.position, transform.rotation);
+         //   //Play Sound.
+         //   //Change 
+       // }
     }
 }

@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 07003302cf211094b98b22487f2dbd30
+timeCreated: 1501872347
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Male01
+    100002: //RootNode
+    100004: R Clavicle
+    100006: R Finger0
+    100008: R Finger01
+    100010: R Finger02
+    100012: R Finger1
+    100014: R Finger11
+    100016: R Finger12
+    100018: R Finger2
+    100020: R Finger21
+    100022: R Finger22
+    100024: R Finger3
+    100026: R Finger31
+    100028: R Finger32
+    100030: R Finger4
+    100032: R Finger41
+    100034: R Finger42
+    100036: R Forearm
+    100038: R Hand
+    100040: R UpperArm
+    400000: Male01
+    400002: //RootNode
+    400004: R Clavicle
+    400006: R Finger0
+    400008: R Finger01
+    400010: R Finger02
+    400012: R Finger1
+    400014: R Finger11
+    400016: R Finger12
+    400018: R Finger2
+    400020: R Finger21
+    400022: R Finger22
+    400024: R Finger3
+    400026: R Finger31
+    400028: R Finger32
+    400030: R Finger4
+    400032: R Finger41
+    400034: R Finger42
+    400036: R Forearm
+    400038: R Hand
+    400040: R UpperArm
+    4300000: Male01
+    7400000: Open Hand
+    7400002: Open Hand Idle
+    7400004: Look Wrist
+    7400006: Wrist Idle
+    9500000: //RootNode
+    13700000: Male01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Open Hand
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: -1.6
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male01
+        weight: 1
+      - path: R Clavicle
+        weight: 1
+      - path: R Clavicle/R UpperArm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Open Hand Idle
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 87.01
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male01
+        weight: 1
+      - path: R Clavicle
+        weight: 1
+      - path: R Clavicle/R UpperArm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Look Wrist
+      takeName: Take 001
+      firstFrame: 97
+      lastFrame: 122
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male01
+        weight: 1
+      - path: R Clavicle
+        weight: 1
+      - path: R Clavicle/R UpperArm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wrist Idle
+      takeName: Take 001
+      firstFrame: 122
+      lastFrame: 168
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male01
+        weight: 1
+      - path: R Clavicle
+        weight: 1
+      - path: R Clavicle/R UpperArm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger0/R Finger01/R Finger02
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger1/R Finger11/R Finger12
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger2/R Finger21/R Finger22
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger3/R Finger31/R Finger32
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41
+        weight: 1
+      - path: R Clavicle/R UpperArm/R Forearm/R Hand/R Finger4/R Finger41/R Finger42
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
