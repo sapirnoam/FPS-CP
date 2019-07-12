@@ -475,7 +475,6 @@ MonoBehaviour:
   health: {fileID: 0}
   Effect: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   collider: {fileID: 4768639493449275757}
-  HealthToGive: 50
 --- !u!95 &4768639493449275756
 Animator:
   serializedVersion: 3

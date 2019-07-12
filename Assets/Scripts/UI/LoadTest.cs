@@ -7,28 +7,14 @@ using UnityEngine.SceneManagement;
 public class LoadTest : MonoBehaviour
 {
 
+    public GameObject SignedInSuccess;
+    public GameObject SignInAsAguest;
     public GameObject NoInternet;
     public GameObject SignOut;
     public GameObject LoginIn;
     public Text UserName;
     public string GameVersion;
     public Text Ver;
-
-
-    [Header("Stats")]
-    public Text Rank;
-    public Text KillPoints;
-    public Text AliveTime;
-    public Text PlayedFor;
-    public Text Kills;
-    public Text Deaths;
-    public Text User;
-
-
-
-
-
-
     /*public Animator NewsAnim;
     public GameObject News;
     private bool NEWSshowd = true; */
@@ -56,7 +42,7 @@ public class LoadTest : MonoBehaviour
         StartCoroutine(GetGameVersionFromSite());
         YourVersionText.text = "Your Game version:" + Application.version.ToString();
         Ver.text = "Game Version: " + GameVersion;
-
+        
         LoginIn.SetActive(true);
         SignOut.SetActive(false);
         SignOutRanking();
@@ -74,7 +60,6 @@ public class LoadTest : MonoBehaviour
         {
             if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
             {
-                LoadStats();
                 LoginIn.SetActive(false);
                 SignOut.SetActive(true);
                 /*if (NEWSshowd == false)
@@ -98,23 +83,22 @@ public class LoadTest : MonoBehaviour
                 else
                 {
                     GameJoltUI.Instance.ShowSignIn(success =>
+                {
+                    GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "." : "Closed the window");
+                    if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
                     {
-                        GameJoltUI.Instance.QueueNotification(success ? "Welcome " + GameJoltAPI.Instance.CurrentUser.Name + "." : "Closed the window");
-                        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+                        SignOut.SetActive(true);
+                        LoginIn.SetActive(false);
+                        GameJoltRankingAutoLogin();
+                        /*if (NEWSshowd == false)
                         {
-                            LoadStats();
-                            SignOut.SetActive(true);
-                            LoginIn.SetActive(false);
-                            GameJoltRankingAutoLogin();
-                            /*if (NEWSshowd == false)
-                            {
-                                News.SetActive(true);
-                                NEWSshowd = true;
+                            News.SetActive(true);
+                            NEWSshowd = true;
 
-                            }
-                            NewsAnim.SetTrigger("Logged"); */
                         }
-                    });
+                        NewsAnim.SetTrigger("Logged"); */
+                    }
+                });
                 }
             }
         }
@@ -174,6 +158,7 @@ public class LoadTest : MonoBehaviour
         NoInternet.SetActive(true);
         yield return new WaitForSeconds(2f);
         NoInternet.SetActive(false);
+        SignInAsAguest.SetActive(true);
     }
 
     public void SignOutButtonClicked()
@@ -205,7 +190,6 @@ public class LoadTest : MonoBehaviour
                     SignOut.SetActive(true);
                     LoginIn.SetActive(false);
                     GameJoltRankingAutoLogin();
-                    LoadStats();
                     /*if (NEWSshowd == false)
                     {
                         News.SetActive(true);
@@ -279,65 +263,5 @@ public class LoadTest : MonoBehaviour
         rankManager.Rank = 1;
         rankManager.XP = 0;
         rankManager.XPtonextRank = 100;
-    }
-    public float Seconds;
-    public float Minutes;
-    public float Hours;
-
-    public GameObject LoadingStatsPanel;
-    private string RankInfo;
-    public void LoadStats()
-    {
-        StartCoroutine(LoadBestTime());
-        LoadingStatsPanel.SetActive(true);
-    }
-    IEnumerator LoadBestTime()
-    {
-        GameJolt.API.DataStore.Get("HighScore", true, (string value) => //
-        {
-            KillPoints.text = "Best KillPoints made: " + value.ToString();
-        });
-        yield return new WaitForSeconds(0.2f);
-        GameJolt.API.DataStore.Get("TotalKills", true, (string value) => //
-        {
-            Kills.text = "Total kills: " + value.ToString();
-        });
-        yield return new WaitForSeconds(0.2f);
-
-        GameJolt.API.DataStore.Get("Deaths", false, (string value) => //
-        {
-            Deaths.text = "Total Deaths: " + value.ToString();
-        });
-        yield return new WaitForSeconds(0.2f);
-
-        yield return new WaitForSeconds(0.2f);
-        GameJolt.API.DataStore.Get("SecondsAlive", false, (string value) =>
-        {
-            Seconds += int.Parse(value);
-        });
-        yield return new WaitForSeconds(0.2f);
-
-        GameJolt.API.DataStore.Get("MinutesAlive", false, (string value) =>
-        {
-            Minutes += int.Parse(value);
-        });
-        yield return new WaitForSeconds(0.2f);
-
-        GameJolt.API.DataStore.Get("HoursAlive", false, (string value) =>
-        {
-            Hours += int.Parse(value);
-        });
-        yield return new WaitForSeconds(0.7f);
-        AliveTime.text = "Best alive time: " + Hours.ToString() + ":" + Minutes.ToString() + ":" + Seconds.ToString();
-        yield return new WaitForSeconds(0.2f);
-        GameJolt.API.DataStore.Get("Rank", false, (string value) =>
-        {
-            Rank.text = "Your rank: " + value;
-        });
-        yield return new WaitForSeconds(0.1f);
-        User.text = "Stats for user: " + GameJoltAPI.Instance.CurrentUser.Name.ToString();
-        yield return new WaitForSeconds(0.2f);
-
-        LoadingStatsPanel.SetActive(false);
     }
 }

@@ -58,7 +58,7 @@ public class PofleAnimatorController : MonoBehaviour
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < 50)
+            if (distance < 55)
             {
                 target.GetComponent<Enemy>().DieWithOutGive();
             }

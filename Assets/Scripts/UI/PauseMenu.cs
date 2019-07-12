@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject Settings;
     public GameObject pausemenuUI;
     public GameManager gm;
+    public AudioSource audiosource;
     private void Start()
     {
         AudioListener.volume = 1;

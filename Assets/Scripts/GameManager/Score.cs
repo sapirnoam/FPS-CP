@@ -11,27 +11,32 @@ public class Score : MonoBehaviour
     public float score = 0; // Made in match //V //Should seen in scoreboard
     public float HighScore = 0;
     public float TotalKills = 0;
-    public int Deaths;
 
+    public int WavesSurvived = 0; // Made in match //V //Should seen in scoreboard
     public int Kills = 0; //Should seen in scoreboard
+    public float GameCoins = 0f; // Made in match + Match coins //V
+    public int Platinum = 0; // Made in match //Should be a popup window
+
     public GameObject panelDeath;
     public GameManager gm;
-    public TimeManager timeManager;
 
     [Header("Gameplay TEXTS")]
     public Text scoreText;
-    public Text KillsMadeInGame;
+    public Text GameCoinsText;
+    public Text WavesSurvivedText;
 
     [Header("DeathMenu TEXTS")]
     public Text ScoreTextDead; //v
     public Text BestScore; //v
+    public Text WavesSurvivedTextDead; //v
     public Text KillsTextDead;
-    public Text YourTime;
-    public Text BestTime;
+    public Text PlatinumEarned;
+
 
     public AudioSource AudioS;
     public AudioClip WhatHappend;
 
+    public bool IsDead = false;
 
     public GameObject Saving;
 
@@ -61,18 +66,6 @@ public class Score : MonoBehaviour
                     return;
             });
         }
-        GameJolt.API.DataStore.Get("MinutesAlive", false, (string value) => {
-            Minutes = int.Parse(value);
-        });
-        GameJolt.API.DataStore.Get("Deaths", false, (string value) => {
-            Deaths = int.Parse(value);
-        });
-        GameJolt.API.DataStore.Get("SecondsAlive", false, (string value) => {
-            Seconds = int.Parse(value);
-        });
-        GameJolt.API.DataStore.Get("HoursAlive", false, (string value) => {
-            Hours = int.Parse(value);
-        });
     }
     string scoreTextscore = "KillPoints: "; // A string representing the score to be shown on the website.
     string scoreTextKill = "Kills: "; // A string representing the score to be shown on the website.
@@ -83,14 +76,8 @@ public class Score : MonoBehaviour
     GameObject[] Enemys;
     GameObject[] MapObjects;
     public LeaderboardsWindow LeaderWindow;
-
-    private int Seconds;
-    private int Minutes;
-    private int Hours;
     public void Dead()
     {
-        Deaths += 1;
-        timeManager.canCount = false;
         Enemys = GameObject.FindGameObjectsWithTag("Enemy");
         for (var i = 0; i < Enemys.Length; i++)
             Destroy(Enemys[i]);
@@ -98,30 +85,8 @@ public class Score : MonoBehaviour
         for (var i = 0; i < MapObjects.Length; i++)
             Destroy(MapObjects[i]);
 
-        YourTime.text = timeManager.Hours.ToString() + ":" + timeManager.Minutes.ToString() + ":" + timeManager.Seconds.ToString();
-        if (Seconds >= timeManager.Seconds && Minutes >= timeManager.Minutes && Hours >= timeManager.Hours)
-        {
-            BestTime.text = Hours.ToString() + ":" + Minutes.ToString() + ":" + Seconds.ToString();
-        }
-        else
-        {
-            YourTime.text = timeManager.Hours.ToString() + ":" + timeManager.Minutes.ToString() + ":" + timeManager.Seconds.ToString();
-        }
         panelDeath.SetActive(true);
-
         Saving.SetActive(true);
-        if (Seconds >= timeManager.Seconds && Minutes >= timeManager.Minutes && Hours >= timeManager.Hours)
-        {
-            GameJolt.API.DataStore.Set("SecondsAlive", timeManager.Seconds.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
-            GameJolt.API.DataStore.Set("MinutesAlive", timeManager.Minutes.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
-            GameJolt.API.DataStore.Set("HoursAlive", timeManager.Hours.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
-        }
         PlayerPrefs.SetInt("ScoreToAddXP", (int)score);
         TotalKills += Kills;
         gm.CursorLock = false;
@@ -144,9 +109,6 @@ public class Score : MonoBehaviour
             GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
                 Debug.Log("Saved Online");
             });
-        GameJolt.API.DataStore.Set("Deaths", Deaths.ToString(), false, (bool success) => {
-            Debug.Log("Saved Online");
-        });
         Saving.SetActive(false);
         StartCoroutine(LeaderLoad());
     }
@@ -164,7 +126,9 @@ public class Score : MonoBehaviour
         ScoreTextDead.text = score.ToString();
         BestScore.text = HighScore.ToString();
 
+        WavesSurvivedTextDead.text = WavesSurvived.ToString();
         KillsTextDead.text = Kills.ToString();
+        PlatinumEarned.text = Platinum.ToString();
     }
     public void PofleAnimator()
     {
@@ -179,7 +143,12 @@ public class Score : MonoBehaviour
     void FixedUpdate()
     {
         scoreText.text = "KillPoints: " + score.ToString();
-        KillsMadeInGame.text = "Kills: " + Kills.ToString();
+        GameCoinsText.text = GameCoins.ToString() + "$";
+        WavesSurvivedText.text = "Waves Survived: " + WavesSurvived.ToString();
+    }
+    private void FieldCheatDetector_OnFieldCheatDetected()
+    {
+        Debug.Log("");
     }
     private void OnApplicationQuit()
     {

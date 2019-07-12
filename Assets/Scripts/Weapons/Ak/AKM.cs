@@ -70,6 +70,7 @@ public class AKM : MonoBehaviour
             {
                 shootpermission = false;
                 animator.SetTrigger("Reload");
+                ammoText.text = "0";
                 ammoTextActive.SetActive(false);
                 ReloadImage.SetActive(true);
                 Dropweapon.canDrop = false;
@@ -139,11 +140,12 @@ void Shoot()
 
     void ReloadAnimation()
     {
-        ammo = 60f;
+        ammo = 60;
         shootpermission = true;
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
         Dropweapon.canDrop = true;
+
     }
     void ReloadSound()
     {

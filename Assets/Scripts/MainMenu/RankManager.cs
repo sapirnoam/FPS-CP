@@ -63,14 +63,16 @@ public class RankManager : MonoBehaviour
             {
                 if (XP >= XPtonextRank && canrankup == true)
                 {
-                    Rank++;
-                    XP -= XPtonextRank;
-                    if (XP < 0)
+                    if (canrankup == true)
                     {
-                        XP = 0;
+                        Rank++;
+                        XP -= XPtonextRank;
+                        if (XP < 0)
+                            XP = 0;
+                        XPtonextRank *= 2;
+                        StartCoroutine(AddXP());
+                        Debug.Log("RankUp");
                     }
-                    XPtonextRank *= 2;
-                    StartCoroutine(AddXP());
                 }
             }
         }
@@ -101,10 +103,12 @@ public class RankManager : MonoBehaviour
         PlayerPrefs.SetInt("BackedFromGame", 0);
         PlayerPrefs.SetInt("NewsShowed", 0);
         PlayerPrefs.Save();
+
     }
 
     IEnumerator AddRank()
     {
+
         yield return new WaitForSeconds(1.5f);
         DataStore.SetSegmented("XP", XP.ToString(), false, success => { });
         GameJolt.API.DataStore.Set("XPtonextRank", XPtonextRank.ToString(), false, (bool success) => { });
@@ -136,6 +140,7 @@ public class RankManager : MonoBehaviour
         PlayerPrefs.SetInt("BackedFromGame", 0);
         PlayerPrefs.Save();
         //Loaded gameobject
+        Debug.Log("All saved online.");
         InvokeRepeating("CheckForNewScore", 5.0f, 5.0f);
         Loading.SetActive(false);
         canrankup = true;

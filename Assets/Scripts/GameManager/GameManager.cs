@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     {
         public bool CursorLock;
         private bool IsLocked;
-        //public bool IsDead = false;
+        public bool IsDead = false;
         public int FpsTarget = 150;
         // Start is called before the first frame update
         void Start()
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         }
     private void OnApplicationQuit()
     {
+        PlayerPrefs.SetInt("NewsShowed", 0);
         PlayerPrefs.SetInt("BackedFromGame", 0);
     }
 }

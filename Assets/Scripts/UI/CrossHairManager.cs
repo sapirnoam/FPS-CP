@@ -9,6 +9,8 @@ public class CrossHairManager : MonoBehaviour
     public bool Hit = false;
 
     public GameObject HitObject;
+    public AudioSource AudioSource;
+    public AudioClip[] HitSound;
     private void Start()
     {
         Hit = false;
