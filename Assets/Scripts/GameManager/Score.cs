@@ -61,6 +61,7 @@ public class Score : MonoBehaviour
                     return;
             });
         }
+
         GameJolt.API.DataStore.Get("MinutesAlive", false, (string value) => {
             Minutes = int.Parse(value);
         });
@@ -75,6 +76,7 @@ public class Score : MonoBehaviour
         });
     }
     string scoreTextscore = "KillPoints: "; // A string representing the score to be shown on the website.
+    string timeTextscore = "Time survived: "; // A string representing the score to be shown on the website.
     string scoreTextKill = "Kills: "; // A string representing the score to be shown on the website.
     string scoreTextWaves = "Waves Surveved:"; // A string representing the score to be shown on the website.
     int tableID = 0; // Set it to 0 for main highscore table.
@@ -84,11 +86,14 @@ public class Score : MonoBehaviour
     GameObject[] MapObjects;
     public LeaderboardsWindow LeaderWindow;
 
-    private int Seconds;
-    private int Minutes;
-    private int Hours;
+    public int Seconds;
+    public int Minutes;
+    public int Hours;
     public void Dead()
     {
+        GameJolt.API.DataStore.Set("Deaths", Deaths.ToString(), false, (bool success) => {
+            Debug.Log("Saved Online");
+        });
         Deaths += 1;
         timeManager.canCount = false;
         Enemys = GameObject.FindGameObjectsWithTag("Enemy");
@@ -99,29 +104,23 @@ public class Score : MonoBehaviour
             Destroy(MapObjects[i]);
 
         YourTime.text = timeManager.Hours.ToString() + ":" + timeManager.Minutes.ToString() + ":" + timeManager.Seconds.ToString();
+
         if (Seconds >= timeManager.Seconds && Minutes >= timeManager.Minutes && Hours >= timeManager.Hours)
         {
             BestTime.text = Hours.ToString() + ":" + Minutes.ToString() + ":" + Seconds.ToString();
         }
-        else
-        {
-            YourTime.text = timeManager.Hours.ToString() + ":" + timeManager.Minutes.ToString() + ":" + timeManager.Seconds.ToString();
-        }
+
         panelDeath.SetActive(true);
 
         Saving.SetActive(true);
-        if (Seconds >= timeManager.Seconds && Minutes >= timeManager.Minutes && Hours >= timeManager.Hours)
+
+        if (Seconds <= timeManager.Seconds && Minutes <= timeManager.Minutes && Hours <= timeManager.Hours)
         {
-            GameJolt.API.DataStore.Set("SecondsAlive", timeManager.Seconds.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
-            GameJolt.API.DataStore.Set("MinutesAlive", timeManager.Minutes.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
-            GameJolt.API.DataStore.Set("HoursAlive", timeManager.Hours.ToString(), false, (bool success) => {
-                Debug.Log("Saved Online");
-            });
+            DataStore.SetSegmented("SecondsAlive", timeManager.Seconds.ToString(), false, success => { });
+            DataStore.SetSegmented("MinutesAlive", timeManager.Minutes.ToString(), false, success => { });
+            DataStore.SetSegmented("HoursAlive", timeManager.Hours.ToString(), false, success => { });
         }
+       
         PlayerPrefs.SetInt("ScoreToAddXP", (int)score);
         TotalKills += Kills;
         gm.CursorLock = false;

@@ -153,14 +153,6 @@ public class LoadTest : MonoBehaviour
         {
             UserName.text = "NOT CONNECTED";
         }
-        if (Loaded >= 3)
-        {
-            rankManager.AllLoaded = true;
-        }
-        else
-        {
-            rankManager.AllLoaded = false;
-        }
     }
 
     public void PoflesSlayer()

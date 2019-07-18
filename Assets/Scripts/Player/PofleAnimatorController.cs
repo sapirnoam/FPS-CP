@@ -16,6 +16,7 @@ public class PofleAnimatorController : MonoBehaviour
     public GameObject effectBlood; // The death effect
     public Health healthManager;
     public Score score;
+    public TimeManager timeManager;
     public void Start()
     {
         effecttransform = this.gameObject.transform.GetChild(4);
@@ -33,9 +34,10 @@ public class PofleAnimatorController : MonoBehaviour
         {
             anim.SetBool("IsWalking", false);
         }
-        if (IsDead == false && healthManager.health < 1)
+        if (IsDead == false && healthManager.health <= 0)
         {
             StartCoroutine(Die());
+            timeManager.canCount = false;
         }
     }
     public GameObject MainCamera;

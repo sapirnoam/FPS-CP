@@ -124,7 +124,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Lava")
         {
-            AudioS.PlayOneShot(Death[Random.Range(0, Death.Length)]);
             Destroy(gameObject);
             Instantiate(effectFire, effecttransform.position, effecttransform.rotation);
         }
@@ -139,13 +138,22 @@ public class Enemy : MonoBehaviour
 
     // Death to the Enemy
     public GameObject Explodedversion;
+    private bool CanGiveScore = false;
+    private bool ScoreWasGiven = false;
     void Die()
     {
-        scoreScript.score += ScoreAdded;
-        scoreScript.Kills += 1;
+        CanGiveScore = true;
+        if (CanGiveScore == true && ScoreWasGiven == false)
+        {
+            ScoreWasGiven = true;
+            ScoreAdded = Random.Range(2, 10);
+            scoreScript.score += ScoreAdded;
+            scoreScript.Kills += 1;
+        }
         Instantiate(effect, effecttransform.position, effecttransform.rotation);
         healthPlayer.health += GiveHealth;
         Destroy(gameObject);
+        Debug.Log("Kill");
     }
 
     public void DieHard()

@@ -16,7 +16,7 @@ public class RankManager : MonoBehaviour
 
     public int BackedFromGame = 0; //If the player came back from game write xp and stuff, If not, Dont write.
 
-    public bool AllLoaded = false;
+
     public GameObject Loading;
     private void Start()
     {
@@ -57,18 +57,16 @@ public class RankManager : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (AllLoaded == true)
+        if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
         {
-            if (GameJoltAPI.Instance.HasUser && GameJoltAPI.Instance.HasSignedInUser)
+            if (XP >= XPtonextRank && canrankup == true)
             {
-                if (XP >= XPtonextRank && canrankup == true)
+                if (canrankup == true)
                 {
                     Rank++;
                     XP -= XPtonextRank;
                     if (XP < 0)
-                    {
                         XP = 0;
-                    }
                     XPtonextRank *= 2;
                     StartCoroutine(AddXP());
                 }
@@ -101,10 +99,12 @@ public class RankManager : MonoBehaviour
         PlayerPrefs.SetInt("BackedFromGame", 0);
         PlayerPrefs.SetInt("NewsShowed", 0);
         PlayerPrefs.Save();
+
     }
 
     IEnumerator AddRank()
     {
+
         yield return new WaitForSeconds(1.5f);
         DataStore.SetSegmented("XP", XP.ToString(), false, success => { });
         GameJolt.API.DataStore.Set("XPtonextRank", XPtonextRank.ToString(), false, (bool success) => { });
@@ -136,6 +136,7 @@ public class RankManager : MonoBehaviour
         PlayerPrefs.SetInt("BackedFromGame", 0);
         PlayerPrefs.Save();
         //Loaded gameobject
+        Debug.Log("All saved online.");
         InvokeRepeating("CheckForNewScore", 5.0f, 5.0f);
         Loading.SetActive(false);
         canrankup = true;
