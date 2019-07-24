@@ -52,13 +52,8 @@ public class Score : MonoBehaviour
         }
         if (GameJoltAPI.Instance.HasUser || GameJoltAPI.Instance.HasSignedInUser)
         {
-            GameJolt.API.DataStore.Get("TotalKills", true, (string value) => {
-                if (float.Parse(value) > TotalKills)
-                {
-                    TotalKills = float.Parse(value);
-                }
-                else
-                    return;
+            GameJolt.API.DataStore.Get("TotalKills", false, (string value) => {
+                 TotalKills = float.Parse(value);
             });
         }
 
@@ -127,7 +122,7 @@ public class Score : MonoBehaviour
         GameJolt.API.Scores.Add((int)score, scoreTextscore + (int)score, 420719, "", (bool success) => {
             Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
         });
-        GameJolt.API.Scores.Add((int)Kills, scoreTextKill + (int)Kills, 421871, "Kills", (bool success) => {
+        GameJolt.API.Scores.Add((int)TotalKills, scoreTextKill + (int)TotalKills, 421871, "Kills", (bool success) => {
             Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : ""));
         });
         if (score > HighScore)
@@ -140,7 +135,7 @@ public class Score : MonoBehaviour
         }
         PlayerPrefs.SetFloat("Score", TotalKills);
             PlayerPrefs.Save();
-            GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), true, (bool success) => {
+            GameJolt.API.DataStore.Set("TotalKills", TotalKills.ToString(), false, (bool success) => {
                 Debug.Log("Saved Online");
             });
         GameJolt.API.DataStore.Set("Deaths", Deaths.ToString(), false, (bool success) => {

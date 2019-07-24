@@ -55,7 +55,6 @@ public class ShotGun : MonoBehaviour
     private void OnEnable()
     {
         shootpermission = true;
-        ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
         Dropweapon.canDrop = true;
     }
@@ -65,13 +64,14 @@ public class ShotGun : MonoBehaviour
         {
             Shell.SetActive(true);
             crosshair.SetActive(true);
-            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.2) //Mouse
+            ammoTextActive.SetActive(true);
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire / Time.deltaTime && shootpermission == true && Time.timeScale >= 0.2) //Mouse
             {
                 for (int i = 0; i < amountOfProjectiles; i++)
                 {
                     Shoot();
                 }
-                nextFire = Time.time + fireRate;
+                nextFire = Time.time + fireRate / Time.deltaTime;
             }
             if (Input.GetAxis("RightTrigger") > 0f && Time.time > nextFire && shootpermission == true && Time.timeScale >= 0.5) //Controller
             {

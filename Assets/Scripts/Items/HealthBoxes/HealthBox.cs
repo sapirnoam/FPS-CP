@@ -36,7 +36,7 @@ public class HealthBox : MonoBehaviour
         if (isOpening == true)
         {
             HealthToGive = Random.Range(50f, 100f);
-            health.health += HealthToGive;
+            health.health += 50;
 
             Instantiate(Effect, transform.position, transform.rotation);
             Destroy(gameObject);

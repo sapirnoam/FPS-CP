@@ -26,7 +26,6 @@ public class DickWeapon : MonoBehaviour
     public DropWeapon Dropweapon;
     public AudioClip[] shootSounds;
 
-    public Camera Cam;
     public ParticleSystem muzzleFlash;
     public GameObject ImpactEffect;
 
@@ -37,6 +36,7 @@ public class DickWeapon : MonoBehaviour
     public Transform WeaponsHolder;
 
     public GameObject crosshair;
+    public GameObject Pee;
 
     void OnDisable()
     {
@@ -107,39 +107,9 @@ public class DickWeapon : MonoBehaviour
         muzzleFlash.Play();
         //Audio:
         audioSource.PlayOneShot(shootSounds[Random.Range(0, shootSounds.Length)]);
-
         /* Ammo: */
         ammo -= 1;
-
-        RaycastHit hit;
-        if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
-        {
-            Enemy target = hit.transform.GetComponent<Enemy>();
-            float damage = Random.Range(damageMin, damageMax);
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-                if (target.health <= 0.9)
-                {
-                    DieHard = Random.Range(0, 3);
-                    if (DieHard == 2)
-                    {
-                        target.DieHard();
-                    }
-                    else
-                        return;
-                }
-            }
-
-            if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out hit, range))
-            {
-                if (hit.transform.tag != "Barrier" && hit.transform.tag != "MusicZone")
-                {
-                    GameObject ImpactGO = Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(ImpactGO, 2);
-                }
-            }
-        }
+        Instantiate(Pee, transform.position, transform.rotation);
     }
 
     void ReloadAnimation()
@@ -149,7 +119,6 @@ public class DickWeapon : MonoBehaviour
         ammoTextActive.SetActive(true);
         ReloadImage.SetActive(false);
         Dropweapon.canDrop = true;
-
     }
     void ReloadSound()
     {
