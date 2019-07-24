@@ -30,14 +30,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.2
         value: {x: 0, y: 3.81, z: 0}
-        inSlope: {x: 0, y: -16.673958, z: 0}
-        outSlope: {x: 0, y: -16.673958, z: 0}
+        inSlope: {x: 0, y: -17.557602, z: 0}
+        outSlope: {x: 0, y: -17.557602, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.914
+        time: 0.868
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -72,7 +72,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.914
+    m_StopTime: 0.868
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -110,7 +110,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.914
+        time: 0.868
         value: 0
         inSlope: 0
         outSlope: 0
@@ -140,14 +140,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.2
         value: 3.81
-        inSlope: -16.673958
-        outSlope: -16.673958
+        inSlope: -17.557602
+        outSlope: -17.557602
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.914
+        time: 0.868
         value: 0
         inSlope: 0
         outSlope: 0
@@ -184,7 +184,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.914
+        time: 0.868
         value: 0
         inSlope: 0
         outSlope: 0
@@ -210,7 +210,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.894
+  - time: 0.734
     functionName: ReloadAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
