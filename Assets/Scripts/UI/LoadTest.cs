@@ -224,7 +224,7 @@ public class LoadTest : MonoBehaviour
     }
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene(3);
     }
     public void OpenGameJoltPage()
     {

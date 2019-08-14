@@ -11,7 +11,11 @@ public class MoveToSite : MonoBehaviour
     }
     public void ApplyBeta()
     {
-        Application.OpenURL("https://goo.gl/forms/VTD0zFioe7swwYO23");
+        Application.OpenURL("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QRDLH4CRB38SU&source=url");
+    }
+    public void SpreadShirt()
+    {
+        Application.OpenURL("https://shop.spreadshirt.com/pofleMerch");
     }
 
 
